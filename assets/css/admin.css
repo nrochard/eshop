@@ -1,0 +1,15 @@
+.message{
+    text-align: center;
+    font-family: "Helvetica Neue";
+    font-size: 20px;
+    color: #e21a2a;
+    padding-bottom: 50px;
+}
+
+th, tr, label{
+    font-size: 25px;
+}
+nav a {
+    font-size: 25px;
+    margin-right: 30px;
+}

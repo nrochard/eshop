@@ -1,0 +1,124 @@
+/*Bouton retour en arrière*/
+
+.return{
+    padding: 30px;
+}
+
+.return img{
+    width: 30px;
+}
+
+.return a{
+    vertical-align: top;
+    font-size: 25px;
+    color: black;
+    font-family: Lato;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.return a:hover{
+    border-bottom: 1px solid black;
+}
+
+/*Titre de la page*/
+
+.title{
+    text-align: center;
+    font-family: Oswald;
+    font-size: 40px;
+    padding: 0 40px 10px 40px;
+}
+
+.subtitle{
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 300;
+    text-align: center;
+}
+
+/*Formulaire d'édition*/
+
+.form{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    margin: 100px 0;
+    width: 100%;
+}
+
+
+.form form{
+    text-align: center;
+}
+
+
+.form h2{
+    font-family: Oswald;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.form h4{
+    font-family: Lato;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 100px;
+    font-weight: 200;
+}
+
+.form input{
+    padding: 20px 100px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-family: Lato;
+    background-color: white;
+    font-size: 25px;
+    border: black 1px solid;
+    font-weight: 200;
+    /*box-shadow: 8px 8px 12px #aaa;*/
+}
+
+.form label{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.form button{
+    display: block;
+    margin: 0 auto;
+    font-family: Lato;
+    font-size: 30px;
+    padding: 20px 40px;
+    color: white;
+    border: none;
+    background-color: black;
+}
+
+.form button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.form a:visited{
+    color: black;
+}
+.form a:hover{
+    color: darkgrey;
+}
+
+small{
+    font-family: Lato;
+}
+
+.message{
+    text-align: center;
+    font-family: Poppins;
+    font-size: 25px;
+    color: #3B97F3;
+}

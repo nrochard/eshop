@@ -1,0 +1,58 @@
+main{
+    padding: 0 100px 80px 100px;
+}
+
+
+.title{
+    text-align: center;
+    font-family: Oswald;
+    font-size: 40px;
+    padding: 40px 40px 0px 40px;
+}
+
+.subtitle{
+    text-align: center;
+    font-family: Lato;
+    font-size: 25px;
+    font-weight: 300;
+    padding-bottom: 70px;
+}
+
+
+.articles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: Lato;
+    flex-wrap: wrap;
+}
+
+.articles img {
+    width: 100%;
+}
+
+.articles div{
+    width: 30%;
+    box-shadow: 8px 8px 12px #aaa;
+}
+
+.articles h2{
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.articles div p:nth-child(3){
+    text-align: center;
+    font-size: 25px;
+    font-weight: 400;
+    padding: 30px;
+}
+
+
+.articles div p:nth-child(4){
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0 30px;
+}

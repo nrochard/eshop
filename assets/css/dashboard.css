@@ -1,0 +1,115 @@
+.title{
+    text-align: center;
+    font-family: Oswald;
+    font-size: 40px;
+    padding: 40px;
+}
+
+.container{
+    max-width: 1610px;
+    margin: 0 auto;
+}
+.main_dashoboard{
+    display: flex;
+    width: 100%;
+    /*margin-left: 50px;*/
+    padding-bottom: 200px;
+}
+
+
+.menu{
+    padding-right: 100px;
+    width: 30%;
+}
+
+.name{
+    box-shadow: 8px 8px 12px #aaa;
+    padding: 30px 50px;
+}
+
+h4{
+    font-size: 30px;
+    font-family: Poppins;
+    font-weight: 200;
+}
+
+h4 span{
+    font-weight: 700;
+}
+
+img{
+    width: 1700px;
+}
+
+.image{
+    background-image: url("../images/dasboard.jpeg");
+    width: 70%;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+
+    align-items: flex-end;
+}
+
+
+
+.link{
+    margin-top: 100px;
+    box-shadow: 8px 8px 12px #aaa;
+    padding: 70px 50px;
+}
+
+.link a{
+    text-decoration: none;
+    font-family: Lato;
+    color: black;
+    font-size: 25px;
+}
+
+.link a:hover{
+    color: darkgrey;
+}
+
+h2{
+    color: white;
+    font-family: "Oleo Script";
+    font-size: 70px;
+    text-align: right;
+    padding: 0 30px;
+
+
+}
+
+@media (max-width: 900px){
+    .image{
+        display: none;
+    }
+    .menu{
+        width: 100%;
+        padding: 0;
+    }
+    .title{
+        font-size: 25px;
+    }
+    h4{
+        font-size: 20px;
+    }
+    .link a{
+        font-size: 20px;
+    }
+    .link{
+        margin-top: 50px;
+    }
+    .main_dashoboard{
+        padding-bottom: 100px;
+    }
+}
+
+
+.message{
+    text-align: center;
+    font-family: Poppins;
+    font-size: 25px;
+    color: #3B97F3;
+    padding-bottom: 50px;
+}

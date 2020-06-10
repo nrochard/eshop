@@ -1,0 +1,339 @@
+.image_header{
+    width: 100%;
+    height: 85vh;
+    background-image: url("../images/main.jpeg");
+    background-size: cover;
+    display: flex;
+    align-self: flex-start;
+    justify-content : flex-end;
+    align-items : flex-end;
+}
+
+.image_header h2{
+    color: white;
+    font-family: "Permanent Marker";
+    font-size: 100px;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.image_header a{
+    text-decoration: none;
+    color: white;
+    font-family: "Permanent Marker";
+    font-size: 100px;
+}
+
+@media (max-width: 900px){
+    .image_header{
+        height: 30vh;
+    }
+    .image_header h2, .image_header a{
+        font-size: 20px;
+        padding: 0;
+    }
+}
+
+/*LES 3 QUESTIONS */
+
+.about{
+    margin-top: 15vh;
+    margin-bottom: 7vh;
+}
+
+.card_questions{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card_questions div{
+    background-color: white;
+    box-shadow: 8px 8px 12px #aaa;
+    width: 25%;
+    padding: 2vh;
+}
+
+.about h3{
+    font-family: Oswald;
+    text-align: center;
+    font-size: 3vh;
+}
+.about p{
+    font-family: Lato;
+    /*text-align: center;*/
+    font-size: 2vh;
+}
+
+.about button{
+    display: block;
+    margin: 30px auto 20px auto;
+    font-family: Oswald;
+    font-size: 20px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: white;
+    outline: 0;
+}
+
+.about button:hover{
+    color: darkgrey;
+    /*border-color: darkgrey;*/
+}
+
+@media only screen and (max-width: 900px){
+    .about{
+        margin: 50px 0 20px 0;
+    }
+    .card_questions{
+        flex-direction: column;
+    }
+    .card_questions div{
+        width: 80%;
+        margin-bottom: 30px;
+    }
+    .about p{
+        font-size: 1.5vh;
+    }
+    .about h3{
+        font-size: 2vh;
+    }
+}
+
+/*SECTION ROSE DU COMPTEUR*/
+
+.counter{
+    margin-top: 15vh;
+    margin-bottom: 7vh;
+    padding: 30px;
+    background-color: #e44344;
+}
+
+@media (max-width: 900px){
+    .counter{
+        margin-top: 0;
+    }
+}
+.counter h2{
+    color: white;
+    padding-top: 3vh;
+    font-family: Oswald;
+    font-size: 3vh;
+    text-align: center;
+}
+
+.number_counter{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.number_counter div{
+    width: 33%;
+}
+
+.number_counter h4{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-family: Lato;
+}
+
+.number_counter img{
+    width: 80px;
+    display: block;
+    margin: auto;
+}
+
+.number_counter p{
+    padding-top: 30px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: Lato;
+    font-weight: 400;
+    padding-bottom: 30px;
+}
+
+@media (max-width: 900px){
+    .counter{
+        padding: 10px;
+    }
+    .number_counter h4{
+        font-size: 20px;
+    }
+    .number_counter img {
+        width: 35px;
+    }
+    .number_counter p{
+        font-size: 12px;
+    }
+}
+
+/*SECTION DES CATEGORIES*/
+
+.categories{
+    padding-bottom: 40px;
+}
+.categories h2{
+    text-align: center;
+    font-family: Oswald;
+    font-size: 3vh;
+}
+
+.categories h4{
+    text-align: center;
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 2vh;
+    margin-bottom: 100px;
+}
+
+.line_categories1{
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 8vh;
+}
+
+.line_categories2{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.categories img{
+    width: 18vh;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.line_categories1 div:hover, .line_categories2 div:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+
+
+.categories p{
+    text-align: center;
+    font-family: Lato;
+    font-size: 25px;
+}
+
+@media (max-width: 900px){
+    .categories img{
+        width: 13vh;
+    }
+    .categories p{
+        font-size: 15px;
+    }
+    .categories h4{
+        font-size: 13px;
+    }
+}
+
+/*Caroussel des opinions */
+
+.opinion h2{
+    padding-top: 3vh;
+    text-align: center;
+    font-family: Oswald;
+    font-size: 3vh;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    background-color: rgba(230, 230, 230, 0.45);
+}
+
+/* Slides */
+.mySlides {
+    display: flex;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #888;
+    font-weight: bold;
+    font-size: 70px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+    background-color: #bbb;
+}
+
+.opinion img{
+    width: 10%;
+    margin-bottom: 3vh;
+}
+
+@media (max-width: 900px){
+    .opinion img{
+        width: 40%;
+    }
+}
+
+.opinion q{
+    font-family: Lato;
+    font-size: 2vh;
+}
+
+.author{
+    font-family: Lato;
+    font-weight: 300;
+    font-size: 2vh;
+}
+
+@media (max-width: 900px){
+    .prev, .next{
+        font-size: 20px;
+    }
+}

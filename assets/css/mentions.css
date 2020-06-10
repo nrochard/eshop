@@ -1,0 +1,18 @@
+body{
+    font-family: Lato;
+    font-size: 20px;
+}
+.title{
+    text-align: center;
+    font-family: Oswald;
+    font-size: 40px;
+    padding: 40px;
+}
+
+main{
+    padding: 0 100px 100px 100px;
+}
+
+main a{
+    color: black;
+}
