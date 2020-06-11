@@ -1,7 +1,10 @@
+/*GÉNÉRAL*/
+
 main{
     padding: 0 100px 80px 100px;
 }
 
+/*TITRE ET SOUS TITRE */
 
 .title{
     text-align: center;
@@ -12,15 +15,19 @@ main{
 
 .subtitle{
     text-align: center;
-    font-family: Lato;
-    font-size: 25px;
-    font-weight: 300;
+    font-family: Poppins;
+    font-size: 28px;
+    font-weight: 400;
     padding-bottom: 70px;
 }
 
+
+
+/*ACCORDEON DES QUESTIONS / RÉPONSES */
+
 .accordion {
-    font-family: Poppins;
-    font-weight: 500;
+    font-family: Lato;
+    font-weight: 700;
     box-shadow: 8px 8px 12px #aaa;
     background-color: #ffffff;
     color: #000000;
@@ -35,7 +42,7 @@ main{
 }
 
 .active, .accordion:hover {
-    background-color: #e0e0e0;
+    background-color: #e9e9e9;
 }
 
 .accordion:after {
@@ -58,15 +65,41 @@ main{
     transition: max-height 0.2s ease-out;
 }
 
-.others{
-    text-align: center;
+p{
+    font-size: 28px;
     font-family: Lato;
-    font-size: 25px;
-    padding-top: 40px;
+    font-weight: 400;
 }
 
-p{
+.others{
+    text-align: center;
+    font-family: Poppins;
     font-size: 25px;
-    font-family: Lato;
-    font-weight: 300;
+    padding-top: 40px;
+    font-weight: 400;
+}
+
+/*REPONSIVE*/
+
+@media (max-width: 900px) {
+    main{
+        padding: 0 20px 80px 20px;
+    }
+    .accordion{
+        font-size: 20px;
+    }
+    .title{
+        font-size: 25px;
+        padding: 40px 10px 0px 10px;
+    }
+
+    .subtitle{
+        font-size: 22px;
+    }
+    p{
+        font-size: 20px;
+    }
+    .others{
+        font-size: 18px;
+    }
 }

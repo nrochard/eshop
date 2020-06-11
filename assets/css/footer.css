@@ -1,4 +1,4 @@
-/*Partie du footer : bannière*/
+/* PARTIE HAUTE DU FOOTER : BANNIÈRE */
 
 .banner{
     background-image: url("../images/footer.jpeg");
@@ -21,12 +21,13 @@
 
 .banner p{
     font-size: 25px;
-    font-family: Poppins;
+    font-family: Oswald;
     text-align: center;
 }
 
 .banner p:nth-child(2){
     font-size: 20px;
+    font-weight: 400;
 }
 @media (max-width: 900px){
     .banner p{
@@ -37,7 +38,7 @@
     }
 }
 
-/*Partie centrale du footer*/
+/* PARTIE CENTRALE DU FOOTER : LES ICONES */
 
 .footer_middle{
     padding-top: 5vh;
@@ -84,7 +85,7 @@
     }
 }
 
-/*Partie basse du footer*/
+/* PARTIE BASSE DU FOOTER : LIENS DES PAGES LÉGALES */
 
 .footer_bottom{
     padding: 3vh 3vh 1vh 3vh;
@@ -134,6 +135,8 @@ justify-content: space-between;
     display: none;
 }
 
+/*REPONSIVE*/
+
 @media (max-width: 900px){
     .footer_bottom{
         padding: 1vh;
@@ -145,6 +148,9 @@ justify-content: space-between;
     }
     .footer_bottom p{
         font-size: 10px;
+    }
+    .footer_middle{
+        padding: 20px 0;
     }
     .mobile_menu{
         text-align: center;
@@ -164,6 +170,11 @@ justify-content: space-between;
     }
     .desktop_menu{
         display: none;
+    }
+    .banner div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 5px;
     }
 }
 

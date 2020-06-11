@@ -17,8 +17,6 @@
 
 <main>
 
-    <h2 class="p-3 text-center mt-5 mb-5">Liste des articles du blog</h2>
-
     <?php if(isset($_SESSION['messages'])): ?>
         <div class="message">
             <?php foreach($_SESSION['messages'] as $message): ?>
@@ -26,6 +24,10 @@
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
+
+    <h2 class="p-3 text-center mt-5 mb-5">Liste des articles du blog</h2>
+
+
 
     <div class="container-fluid">
 

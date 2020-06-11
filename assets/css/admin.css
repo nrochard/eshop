@@ -1,9 +1,10 @@
 .message{
     text-align: center;
     font-family: "Helvetica Neue";
-    font-size: 20px;
-    color: #e21a2a;
-    padding-bottom: 50px;
+    font-size: 25px;
+    color: #ffffff;
+    padding: 20px;
+    background-color: #9933cc;
 }
 
 th, tr, label{

@@ -30,7 +30,7 @@
     <?php endforeach; ?>
 
 
-    <p class="others">Si toutefois tu en as d’autres, tu peux nous écrire à hello@makemestitch.com, on se fera une joie de te répondre</p>
+    <p class="others">Si toutefois tu en as d’autres, tu peux nous écrire à hello@icone.com, on se fera une joie de te répondre</p>
 </main>
 <footer>
     <?php require 'partials/footer.php'; ?>
