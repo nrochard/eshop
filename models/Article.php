@@ -23,7 +23,9 @@ function deleteArticle($id)
     $db = dbConnect();
 
     $article = getArticle($id);
-    unlink('../assets/images/blog/'.$article['image']);
+    if($article['image'] != null){
+        unlink("./assets/images/blog/".$article['image']);
+    }
 
     $query = $db->prepare('DELETE FROM articles WHERE id = ?');
     $result = $query->execute([$id]);
@@ -50,22 +52,20 @@ function updateArticle($id, $informations){
 
     if($result && !empty($_FILES['image']['tmp_name'])){
 
-        $articleId = $db->lastInsertId();
-
         $allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png');
         $my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
         if (in_array($my_file_extension , $allowed_extensions)){
 
-            $article = getArticle($articleId);
+            $article = getArticle($id);
             if($article['image'] != null){
-                unlink("./assets/images/product/".$article['image']);
+                unlink("./assets/images/blog/".$article['image']);
             }
 
-            $new_file_name = $articleId . '.' . $my_file_extension ;
-            $destination = '../assets/images/product/' . $new_file_name;
+            $new_file_name = $id . '.' . $my_file_extension ;
+            $destination = './assets/images/blog/' . $new_file_name;
             $result = move_uploaded_file( $_FILES['image']['tmp_name'], $destination);
 
-            $db->query("UPDATE articles SET image = '$new_file_name' WHERE id = $articleId");
+            $db->query("UPDATE articles SET image = '$new_file_name' WHERE id = $id");
         }
     }
 
@@ -103,4 +103,3 @@ function addArticle($informations)
 
     return $result;
 }
-

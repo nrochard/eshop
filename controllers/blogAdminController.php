@@ -22,7 +22,7 @@ else if($_GET['action'] == 'delete'){
 elseif($_GET['action'] == 'edit') {
 
     if(!empty($_POST)){
-        if(empty($_POST['title']) || empty($_POST['created_at']) || empty($_POST['summary']) || empty($_POST['content']) || empty($_POST['image']) ){
+        if(empty($_POST['title']) || empty($_POST['created_at']) || empty($_POST['summary']) || empty($_POST['content']) || empty($_FILES['image'])){
             if(empty($_POST['title'])){
                 $_SESSION['messages'][] = 'Le champ titre est obligatoire !';
             }
@@ -35,7 +35,7 @@ elseif($_GET['action'] == 'edit') {
             else if(empty($_POST['content'])){
                 $_SESSION['messages'][] = 'Le champ contenu est obligatoire !';
             }
-            else if(empty($_POST['image'])){
+            else if(empty($_FILES['image'])){
                 $_SESSION['messages'][] = 'Le champ image est obligatoire !';
             }
             $_SESSION['old_inputs'] = $_POST;

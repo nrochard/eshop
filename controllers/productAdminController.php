@@ -37,6 +37,8 @@ elseif($_GET['action'] == 'add'){
 
 elseif($_GET['action'] == 'edit') {
 
+
+
     if(!empty($_POST)){
         if(empty($_POST['name']) || empty($_POST['price'])){
             if(empty($_POST['name'])){

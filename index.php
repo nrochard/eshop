@@ -61,6 +61,9 @@ if(isset($_GET['p'])):
         case 'productAdmin' :
             require 'controllers/productAdminController.php';
             break;
+        case 'cart' :
+            require 'controllers/cartController.php';
+            break;
         default :
             require 'controllers/indexController.php';
     endswitch;

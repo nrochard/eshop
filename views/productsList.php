@@ -42,6 +42,7 @@
                 <tr>
                     <th><?= $product['id'] ?></th>
                     <td><?= $product['name'] ?> </td>
+                    <td><?= $product['categories'] ?> </td>
                     <td>
                         <a class="btn btn-primary btn-lg" href="index.php?p=productAdmin&action=edit&id=<?= $product['id'] ?>" role="button">Modifier</a>
 

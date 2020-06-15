@@ -4,11 +4,11 @@ main{
 
 
 .title{
-    text-align: center;
-    font-family: Oswald;
-    font-size: 40px;
-    padding: 40px 40px 0px 40px;
-}
+     text-align: center;
+     font-family: Oswald;
+     font-size: 40px;
+     padding: 40px 40px 0px 40px;
+ }
 
 .subtitle{
     text-align: center;

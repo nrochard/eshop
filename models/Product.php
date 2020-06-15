@@ -4,10 +4,15 @@ function getAllProducts(){
 
     $db = dbConnect();
 
-    $query = $db->query('SELECT * FROM products');
+    $query = $db->query('SELECT p.*, GROUP_CONCAT(c.name SEPARATOR " / ") AS categories
+FROM products p
+JOIN product_categories pc ON p.id = pc.product_id
+JOIN categories c ON pc.category_id = c.id
+GROUP BY p.id');
     $products = $query->fetchAll();
 
     return $products;
+
 }
 
 function getProduct($productId){
@@ -31,8 +36,8 @@ function addProduct($informations)
 
     if ($result) {
         $productId = $db->lastInsertId();
-        if(isset($informations)){
 
+        if(isset($informations)){
             $queryString = "INSERT INTO product_categories (product_id, category_id) VALUES ";
             $queryValues = array();
 
@@ -113,8 +118,7 @@ function updateProduct($id, $informations){
         $id,
     ]);
 
-
-    if (isset($informations)) {
+    if(isset($informations)) {
 
         $queryString = "INSERT INTO product_categories (product_id, category_id) VALUES ";
         $queryValues = array();
@@ -139,12 +143,18 @@ function updateProduct($id, $informations){
         $result = $query->execute($queryValues);
     }
 
-    if($result && isset($_FILES['image']['tmp_name'])){
+    if($result && !empty($_FILES['image']['tmp_name'])){
         $articleId = $db->lastInsertId();
 
         $allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png' );
         $my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
         if (in_array($my_file_extension , $allowed_extensions)){
+
+            $product = getProduct($id);
+            if ($product['image'] != NULL){
+                unlink('../assets/images/product/'.$product['image']);
+            }
+
             $new_file_name = $articleId . '.' . $my_file_extension ;
             $destination = '../assets/images/article/' . $new_file_name;
             $result = move_uploaded_file( $_FILES['image']['tmp_name'], $destination);
@@ -161,7 +171,10 @@ function deleteProduct($id)
     $db = dbConnect();
 
     $product = getProduct($id);
-    unlink('../assets/images/product/'.$product['image']);
+    if ($product['image'] != NULL){
+        unlink('../assets/images/product/'.$product['image']);
+    }
+
 
     $query = $db->prepare('DELETE FROM products WHERE id = ?');
     $result = $query->execute([$id]);

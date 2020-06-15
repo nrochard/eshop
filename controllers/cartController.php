@@ -1,5 +1,13 @@
 <?php
 
+require_once 'models/Category.php';
+
+$categories = getCategories();
+
+if($_GET['action'] == 'display'){
+    require('views/cart.php');
+}
+
 //action = deleteProduct
     // ici supprime un panier du panier
 
@@ -36,6 +44,6 @@
 
 //FONCTION DU MODELE
 //for each $_SESSION['cart'] as $product_id => quantity
-$cartProducts[] = getProduct //SELECT FROM products WHHERE ID = $product_id
+//$cartProducts[] = getProduct //SELECT FROM products WHHERE ID = $product_id
 
     // appeler la view pour afficher tout le pamnier

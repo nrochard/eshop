@@ -1,0 +1,134 @@
+main{
+    padding: 0 100px 80px 100px;
+}
+.title{
+    text-align: center;
+    font-family: Oswald;
+    font-size: 40px;
+    padding: 40px 40px 0px 40px;
+}
+
+.cart{
+    display: flex;
+    margin: 100px 0;
+    justify-content: space-between;
+}
+
+
+table{
+    box-shadow: 8px 8px 12px #aaa;
+    padding: 30px;
+    font-family: Lato;
+}
+
+thead td:nth-child(1) {
+    width: 20%;
+}
+
+thead td:nth-child(2) {
+    width: 40%;
+}
+
+thead td:nth-child(3) {
+    width: 10%;
+}
+
+thead td:nth-child(4) {
+    width: 20%;
+    color: #FED447;
+}
+
+th, td {
+    padding: 20px;
+}
+
+
+
+.recap_product{
+    width: 30%;
+    box-shadow: 8px 8px 12px #aaa;
+}
+
+.recap_name{
+    font-family: Poppins;
+    font-size: 30px;
+    padding-left: 30px;
+}
+
+.recap_product p{
+    padding: 30px 50px;
+    font-family: Lato;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.recap_product button{
+    margin: 0 auto 50px auto;
+    font-size: 25px;
+    display: block;
+    padding: 20px;
+    font-family: Poppins;
+    width: 400px;
+}
+.recap_product button:nth-child(6){
+    background-color: #b5b5b5;
+    color: #000000;
+    border: none;
+    outline: 0;
+}
+
+.recap_product button:last-child{
+    background-color: black;
+    color: white;
+    border: none;
+    outline: 0;
+}
+
+
+@media (max-width: 900px) {
+    main {
+        padding: 20px 0;
+    }
+    .cart{
+       margin: 30px 0;
+    }
+    table{
+        padding: 5px;
+    }
+    thead td{
+        font-size: 15px;
+    }
+
+    th, td{
+        padding: 2px;
+    }
+
+    .cart {
+        display: block;
+    }
+
+    .list_product {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .recap_product {
+        width: 100%;
+    }
+    .title {
+        font-size: 25px;
+        padding: 20px 0;
+    }
+    .recap_name{
+        font-size: 20px;
+        padding: 10px;
+    }
+    .recap_product p{
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    .recap_product button{
+       font-size: 15px;
+        margin: 0 auto 20px auto;
+    }
+}

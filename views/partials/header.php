@@ -20,7 +20,7 @@
             <img src="<?= isset($_SESSION['user']['firstname']) ? 'assets/flavicon/picto-connect.svg' : 'assets/flavicon/picto-disconnect.svg' ?>"
         </a>
 
-            <a href=""><img src="assets/flavicon/picto-basket.svg"></a>
+            <a href="index.php?p=cart&action=display"><img src="assets/flavicon/picto-basket.svg"></a>
 
 
 
