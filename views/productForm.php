@@ -39,8 +39,19 @@
             </div>
 
             <div class="form-group">
-                <label for="price">Prix :</label>
-                <input type="text" id="price" name="price" class="form-control" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['price'] : '' ?><?= isset($product) ? $product['price'] : ''?>">
+                <label for="category_id">Catégories</label>
+                <select multiple class="form-control" id="category_id" name="category_id[]">
+                    <?php foreach($categories as $category): ?>
+                        <?php
+                        $selected = false;
+                        foreach ($productCategories as $productCategory){
+                            if ($category['id'] == $productCategory['id']){
+                                $selected = true;
+                            }
+                        }
+                        ?><option value="<?= $category['id']; ?>" <?php if(isset($product) && $selected): ?>selected="selected"<?php endif; ?>><?= $category['name']; ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
 
             <div class="form-group">
@@ -49,29 +60,29 @@
             </div>
 
             <div class="form-group">
-                <label for="category_id">Catégories</label>
-                <select multiple class="form-control" id="category_id" name="category_id[]">
-                    <?php foreach($categories as $category): ?>
-                    <?php
-                    $selected = false;
-                    foreach ($productCategories as $productCategory){
-                        if ($category['id'] == $productCategory['id']){
-                            $selected = true;
-                        }
-                    }
-                    ?><option value="<?= $category['id']; ?>" <?php if(isset($product) && $selected): ?>selected="selected"<?php endif; ?>><?= $category['name']; ?></option>
-                    <?php endforeach; ?>
-                </select>
+                <label for="quantity">Quantité disponible :</label>
+                <input type="text" id="quantity" name="quantity" class="form-control" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['quantity'] : '' ?><?= isset($product) ? $product['quantity'] : ''?>">
             </div>
+
+
+            <div class="form-group">
+                <label for="price">Prix :</label>
+                <input type="text" id="price" name="price" class="form-control" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['price'] : '' ?><?= isset($product) ? $product['price'] : ''?>">
+            </div>
+
 
             <div class="form-group">
                 <label for="image">Image : </label>
                 <input type="file" class="form-control-file" id="image" name="image">
             </div>
 
-
-
-
+            <div class="form-group">
+                <label for="is_activated">Mettre le produit en vente ?</label>
+                <select class="form-control" id="is_activated" name="is_activated">
+                    <option value="1">Oui</option>
+                    <option value="0">Non</option>
+                </select>
+            </div>
 
             <div class="text-center mt-5">
                 <button type="submit" class="btn btn-dark btn-lg">Enregistrer</button>

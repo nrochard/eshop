@@ -39,7 +39,7 @@
 
             </ul>
         </li>
-        <li><a href="index.php?p=plans">Abonnements</a></li>
+        <li><a href="index.php?p=plans&action=list">Abonnements</a></li>
         <li><a href="index.php?p=blog">Nos conseils</a></li>
         <li><a href="index.php?p=faq">Vos questions</a></li>
     </ul>

@@ -32,8 +32,9 @@ main{
 }
 
 .articles div{
-    width: 30%;
+    width: 40%;
     box-shadow: 8px 8px 12px #aaa;
+    margin-bottom: 100px;
 }
 
 .articles h2{
@@ -55,4 +56,25 @@ main{
     font-size: 15px;
     font-weight: 300;
     padding: 0 30px;
+}
+
+@media (max-width: 900px){
+    main{
+        padding: 0 10px 80px 10px;
+    }
+    .articles{
+        flex-direction: column;
+    }
+    .articles div{
+        width: 100%;
+    }
+    .title{
+        font-size: 25px;
+        padding: 40px 10px 0px 10px;
+    }
+
+    .subtitle{
+        font-size: 22px;
+        padding-bottom: 20px;
+    }
 }

@@ -25,7 +25,7 @@ elseif($_GET['action'] == 'new'){
 
 elseif($_GET['action'] == 'add'){
 
-    if(empty($_POST['name']) || empty($_POST['tag']) || empty($_POST['price']) || empty($_POST['feature1']) || empty($_POST['feature2']) || empty($_POST['feature3'])){
+    if(empty($_POST['name']) || empty($_POST['tag']) || empty($_POST['price']) || empty($_POST['feature1']) || empty($_POST['feature2']) || empty($_POST['feature3']) || empty($_POST['duration'])){
         if(empty($_POST['name'])){
             $_SESSION['messages'][] = 'Le champ nom est obligatoire !';
         }
@@ -43,6 +43,9 @@ elseif($_GET['action'] == 'add'){
         }
         else if(empty($_POST['feature3'])){
             $_SESSION['messages'][] = 'Le champ troisième caractéristique est obligatoire !';
+        }
+        else if(empty($_POST['duration'])){
+            $_SESSION['messages'][] = 'Le champ durée est obligatoire !';
         }
         $_SESSION['old_inputs'] = $_POST;
         header('Location:index.php?p=planAdmin&action=new');
@@ -62,7 +65,7 @@ elseif($_GET['action'] == 'add'){
 elseif($_GET['action'] == 'edit') {
 
     if(!empty($_POST)){
-        if(empty($_POST['name']) || empty($_POST['tag']) || empty($_POST['price']) || empty($_POST['feature1']) || empty($_POST['feature2']) || empty($_POST['feature3'])){
+        if(empty($_POST['name']) || empty($_POST['tag']) || empty($_POST['price']) || empty($_POST['feature1']) || empty($_POST['feature2']) || empty($_POST['feature3']) || empty($_POST['duration'])){
             if(empty($_POST['name'])){
                 $_SESSION['messages'][] = 'Le champ nom est obligatoire !';
             }
@@ -80,6 +83,9 @@ elseif($_GET['action'] == 'edit') {
             }
             else if(empty($_POST['feature3'])){
                 $_SESSION['messages'][] = 'Le champ troisième caractéristique est obligatoire !';
+            }
+            else if(empty($_POST['duration'])){
+                $_SESSION['messages'][] = 'Le champ durée est obligatoire !';
             }
             $_SESSION['old_inputs'] = $_POST;
             header('Location:index.php?p=planAdmin&action=edit&id='.$_GET['id']);

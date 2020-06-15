@@ -13,23 +13,36 @@
 <header>
 
     <?php require 'partials/header.php'; ?>
-    <hr>
+    <?php if(isset($_SESSION['messages'])): ?>
+        <div class="message">
+            <?php foreach($_SESSION['messages'] as $message): ?>
+                <?= $message ?><br>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+    <?php if(!isset($_SESSION['messages'])): ?>
+        <hr>
+    <?php endif;?>
 </header>
 
 <main>
 
     <h1 class="title">VOTRE PANIER </h1>
 
+    <?php if (!empty($_SESSION['cart'])) : ?>
     <div class="cart">
         <div class="list_product">
             <table>
                 <thead>
+                <?php if ($selectedPlan) :?>
                 <tr>
-                    <td>Groupe</td>
-                    <td>Année de formation</td>
-                    <td>Nombre d'albums</td>
-                    <td>Morceau le plus célèbre</td>
+                    <td><img src="assets/flavicon/instagram.png"></td>
+                    <td>Abonnement <?= $selectedPlan['name']?></td>
+                    <td>Quantité : 1</td>
+                    <td><?= $selectedPlan['price']?>€ / <?= $selectedPlan['duration']?></td>
+                    <td><button><a href="index.php?p=cart&action=deletePlan">Supprimer</a></button></td>
                 </tr>
+                <?php endif;?>
                 </thead>
             </table>
         </div>
@@ -43,6 +56,16 @@
             <button><a>Payer mon panier</a></button>
         </div>
     </div>
+    <?php endif;?>
+
+    <?php if (!isset($_SESSION['cart']['plan'])) : ?>
+    <div class="empty_cart">
+        <img src="assets/flavicon/shopping-bag.svg">
+        <h3>Votre panier est actuellement vide.</h3>
+        <button class="jump"><a href="index.php">Commencer mes achats</a></button>
+    </div>
+
+    <?php endif;?>
 </main>
 
 <!--$total = 0-->

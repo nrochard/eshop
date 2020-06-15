@@ -4,7 +4,7 @@
 
 <head>
     <title>Icône - Description du produit</title>
-    <link rel="stylesheet" href="assets/css/home_page.css">
+    <link rel="stylesheet" href="assets/css/product.css">
     <?php require 'partials/head_assets.php'; ?>
 </head>
 
@@ -14,15 +14,33 @@
 
     <?php require 'partials/header.php'; ?>
 
+    <hr>
+
 </header>
 
 <main>
 
+    <h1 class="title"><?= $product['name'] ?> </h1>
 
-    <form action="index.php?p=cart&action=addProduct&product_id=1" method="post">
+    <div class="info_product">
+        <div>
+            <img src="assets/images/blog/<?=$product['image']?>">
+        </div>
+        <div>
+            <h3>Description : </h3>
+            <p><?=$product['description']?></p>
 
-        <input type="text" name="quantity">
-    </form>
+            <form action="index.php?p=cart&action=addProduct&product_id=1" method="post">
+                <label for="quantity"></label>
+                <input type="text" name="quantity" id="quantity" placeholder="Quantité">
+                <br>
+                <button type="submit">Ajouter au panier</button>
+            </form>
+
+        </div>
+    </div>
+
+
 </main>
 
 <footer>

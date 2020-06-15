@@ -21,28 +21,16 @@
     <h3 class="subtitle">Tu trouveras toutes les réponses à tes questions ici !</h3>
 
     <div class="articles">
+        <?php foreach($articles as $article):?>
         <div>
-            <h2>7 conseils pour une gestion efficace</h2>
-            <img src="assets/images/blog/article_1.jpg">
+            <h2><?= $article['title']?></h2>
+            <img src="assets/images/blog/<?=$article['image']?>">
             <p>
-                Mieux vaut être sur un réseau social
-                et le faire bien plutôt que d’être sur
-                tous les réseaux sociaux et d’avoir
-                une communication décousue
+                <?= $article['summary']?>
             </p>
-            <p>Le 14 mai 2020</p>
+            <p><?= $article['created_at']?></p>
         </div>
-        <div>
-            <h2>7 conseils pour une gestion efficace</h2>
-            <img src="assets/images/blog/article_2.jpeg">
-            <p>
-                Mieux vaut être sur un réseau social
-                et le faire bien plutôt que d’être sur
-                tous les réseaux sociaux et d’avoir
-                une communication décousue
-            </p>
-            <p>Le 14 mai 2020</p>
-        </div>
+        <?php endforeach;?>
     </div>
 
 </main>

@@ -15,11 +15,22 @@ elseif($_GET['action'] == 'new'){
 
 elseif($_GET['action'] == 'add'){
 
-    if(empty($_POST['name'])){
-
+    if(empty($_POST['name']) || empty($_POST['price']) || empty($_POST['description']) || empty($_POST['quantity'])){
         if(empty($_POST['name'])){
             $_SESSION['messages'][] = 'Le champ nom est obligatoire !';
         }
+        else if(empty($_POST['price'])){
+            $_SESSION['messages'][] = 'Le champ prix est obligatoire !';
+        }
+
+        else if(empty($_POST['description'])){
+            $_SESSION['messages'][] = 'Le champ description est obligatoire !';
+        }
+
+        else if(empty($_POST['quantity'])){
+            $_SESSION['messages'][] = 'Le champ quantité est obligatoire !';
+        }
+
 
         $_SESSION['old_inputs'] = $_POST;
         header('Location:index.php?p=productAdmin&action=new');
@@ -37,15 +48,21 @@ elseif($_GET['action'] == 'add'){
 
 elseif($_GET['action'] == 'edit') {
 
-
-
     if(!empty($_POST)){
-        if(empty($_POST['name']) || empty($_POST['price'])){
+        if(empty($_POST['name']) || empty($_POST['price']) || empty($_POST['description']) || empty($_POST['quantity'])){
             if(empty($_POST['name'])){
                 $_SESSION['messages'][] = 'Le champ nom est obligatoire !';
             }
             else if(empty($_POST['price'])){
                 $_SESSION['messages'][] = 'Le champ prix est obligatoire !';
+            }
+
+            else if(empty($_POST['description'])){
+                $_SESSION['messages'][] = 'Le champ description est obligatoire !';
+            }
+
+            else if(empty($_POST['quantity'])){
+                $_SESSION['messages'][] = 'Le champ quantité est obligatoire !';
             }
             $_SESSION['old_inputs'] = $_POST;
             header('Location:index.php?p=productAdmin&action=edit&id='.$_GET['id']);
@@ -53,7 +70,7 @@ elseif($_GET['action'] == 'edit') {
         }
         else{
             $result = updateProduct($_GET['id'], $_POST);
-            $_SESSION['messages'][] = $result ? 'Artiste mis à jour' : 'Erreur lors de la mise à jour... :(';
+            $_SESSION['messages'][] = $result ? 'Produit mis à jour' : 'Erreur lors de la mise à jour... :(';
             header('Location:index.php?p=productAdmin&action=list');
             exit;
         }

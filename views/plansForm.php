@@ -41,11 +41,7 @@
                 <input type="text" class="form-control" id="tag" name="tag" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['tag'] : '' ?><?= isset($plan) ? $plan['tag'] : ''?>">
                 <small id="name" class="form-text text-muted">Champs obligatoire.</small>
             </div>
-            <div class="form-group">
-                <label for="price">Prix :</label>
-                <input type="text" class="form-control" id="price" name="price" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['price'] : '' ?><?= isset($plan) ? $plan['price'] : ''?>">
-                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
-            </div>
+
             <div class="form-group">
                 <label for="feature1">Première caractéristique :</label>
                 <input type="text" class="form-control" id="feature1" name="feature1" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['feature1'] : '' ?><?= isset($plan) ? $plan['feature1'] : ''?>">
@@ -61,6 +57,18 @@
             <div class="form-group">
                 <label for="feature3">Troisième caractéristique :</label>
                 <input type="text" class="form-control" id="feature3" name="feature3" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['feature3'] : '' ?><?= isset($plan) ? $plan['feature3'] : ''?>">
+                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Durée :</label>
+                <input type="text" class="form-control" id="duration" name="duration" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['duration'] : '' ?><?= isset($plan) ? $plan['duration'] : ''?>">
+                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Prix :</label>
+                <input type="text" class="form-control" id="price" name="price" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['price'] : '' ?><?= isset($plan) ? $plan['price'] : ''?>">
                 <small id="name" class="form-text text-muted">Champs obligatoire.</small>
             </div>
 

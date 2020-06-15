@@ -5,10 +5,10 @@ function getAllProducts(){
     $db = dbConnect();
 
     $query = $db->query('SELECT p.*, GROUP_CONCAT(c.name SEPARATOR " / ") AS categories
-FROM products p
-JOIN product_categories pc ON p.id = pc.product_id
-JOIN categories c ON pc.category_id = c.id
-GROUP BY p.id');
+        FROM products p
+        JOIN product_categories pc ON p.id = pc.product_id
+        JOIN categories c ON pc.category_id = c.id
+        GROUP BY p.id');
     $products = $query->fetchAll();
 
     return $products;
@@ -27,11 +27,14 @@ function addProduct($informations)
 {
     $db = dbConnect();
 
-    $query = $db->prepare("INSERT INTO products (name, price, description) VALUES( :name, :price, :description)");
+    $query = $db->prepare("INSERT INTO products (name, price, description, quantity, is_activated) VALUES( :name, :price, :description, :quantity, :is_activated)");
     $result = $query->execute([
         'name' => $informations['name'],
         'price' => $informations['price'],
         'description' => $informations['description'],
+        'quantity' => $informations['quantity'],
+        'is_activated' => $informations['is_activated'],
+
     ]);
 
     if ($result) {
@@ -61,16 +64,16 @@ function addProduct($informations)
             $result = $query->execute($queryValues);
         }
 
-        if (!empty($_FILES['image']['tmp_name'])) {
+        if($result)
+        {
+            $allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png' );
+            $my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
+            if (in_array($my_file_extension , $allowed_extensions)){
+                $new_file_name = $productId . '.' . $my_file_extension ;
+                $destination = './assets/images/products/' . $new_file_name;
+                $result = move_uploaded_file( $_FILES['image']['tmp_name'], $destination);
 
-            $allowed_extensions = array('jpg', 'jpeg', 'gif', 'png');
-            $my_file_extension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-            if (in_array($my_file_extension, $allowed_extensions)) {
-                $new_file_name = $productId . '.' . $my_file_extension;
-                $destination = '../assets/images/artist/' . $new_file_name;
-                $result = move_uploaded_file($_FILES['image']['tmp_name'], $destination);
-
-                $db->query("UPDATE artists SET image = '$new_file_name' WHERE id = $productId");
+                $db->query("UPDATE products SET image = '$new_file_name' WHERE id = $productId");
             }
         }
 
@@ -86,8 +89,7 @@ function getProductCategories($productId){
         SELECT c.*
         FROM categories c 
         INNER JOIN product_categories pc ON c.id = pc.category_id
-        WHERE pc.product_id = ?
-    ");
+        WHERE pc.product_id = ?");
 
     $query->execute([
         $productId,
@@ -144,22 +146,21 @@ function updateProduct($id, $informations){
     }
 
     if($result && !empty($_FILES['image']['tmp_name'])){
-        $articleId = $db->lastInsertId();
 
-        $allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png' );
+        $allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png');
         $my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
         if (in_array($my_file_extension , $allowed_extensions)){
 
             $product = getProduct($id);
-            if ($product['image'] != NULL){
-                unlink('../assets/images/product/'.$product['image']);
+            if($product['image'] != null){
+                unlink("./assets/images/products/".$product['image']);
             }
 
-            $new_file_name = $articleId . '.' . $my_file_extension ;
-            $destination = '../assets/images/article/' . $new_file_name;
+            $new_file_name = $id . '.' . $my_file_extension ;
+            $destination = './assets/images/products/' . $new_file_name;
             $result = move_uploaded_file( $_FILES['image']['tmp_name'], $destination);
 
-            $db->query("UPDATE products SET image = '$new_file_name' WHERE id = $articleId");
+            $db->query("UPDATE products SET image = '$new_file_name' WHERE id = $id");
         }
     }
     return($result);
@@ -181,3 +182,5 @@ function deleteProduct($id)
 
     return $result;
 }
+
+

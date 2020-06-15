@@ -64,6 +64,7 @@
     font-family: Lato;
     /*text-align: center;*/
     font-size: 2vh;
+    padding: 10px;
 }
 
 .about button{
@@ -108,7 +109,7 @@
     margin-top: 15vh;
     margin-bottom: 7vh;
     padding: 30px;
-    background-color: #e44344;
+    background-color: #d22749;
 }
 
 @media (max-width: 900px){

@@ -1,12 +1,33 @@
 <?php
 
 require_once 'models/Category.php';
+require_once 'models/Plan.php';
 
 $categories = getCategories();
 
 if($_GET['action'] == 'display'){
-    require('views/cart.php');
+
+    var_dump($_SESSION['cart']);
+    $categories = getCategories();
+    $selectedPlan = [];
+    if (isset($_SESSION['cart']['plan'])) {
+        $selectedPlan = getPlan($_SESSION['cart']['plan']);
+    }
+//    var_dump($selectedPlan);
+    include 'views/cart.php';
 }
+
+if($_GET['action'] == 'deletePlan'){
+    unset($_SESSION['cart']['plan']);
+    $selectedPlan = [];
+    $_SESSION['messages'][] = 'Votre abonnement à bien été supprimé !';
+
+    include 'views/cart.php';
+}
+
+
+
+
 
 //action = deleteProduct
     // ici supprime un panier du panier
@@ -40,7 +61,6 @@ if($_GET['action'] == 'display'){
 
 // action displayProduct
     // aller chercher en BDD tout les produits du panier
-
 
 //FONCTION DU MODELE
 //for each $_SESSION['cart'] as $product_id => quantity

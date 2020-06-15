@@ -1,5 +1,5 @@
 main{
-    padding: 0 100px 80px 100px;
+    padding: 0 100px 100px 100px;
 }
 .title{
     text-align: center;
@@ -17,8 +17,9 @@ main{
 
 table{
     box-shadow: 8px 8px 12px #aaa;
-    padding: 30px;
+    padding: 10px;
     font-family: Lato;
+    width: 1300px;
 }
 
 thead td:nth-child(1) {
@@ -26,23 +27,46 @@ thead td:nth-child(1) {
 }
 
 thead td:nth-child(2) {
-    width: 40%;
+    width: 35%;
+    font-size: 25px;
+    font-weight: 600;
 }
 
 thead td:nth-child(3) {
-    width: 10%;
+    width: 15%;
+    font-size: 18px;
 }
 
 thead td:nth-child(4) {
     width: 20%;
     color: #FED447;
+    font-size: 30px;
+    font-weight: 700;
 }
 
 th, td {
     padding: 20px;
 }
 
+img{
+    width: 100px;
+}
 
+button{
+    background-color: #d22749;
+    outline: 0;
+    border: none;
+    padding: 10px;
+}
+
+button:hover{
+    background-color: #a4a4a4;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
 
 .recap_product{
     width: 30%;
@@ -84,6 +108,52 @@ th, td {
     outline: 0;
 }
 
+/*PAGE PANIER VIDE*/
+
+.empty_cart{
+    text-align: center;
+    margin-top: 100px;
+}
+.empty_cart img{
+    width: 80px;
+}
+
+.empty_cart h3{
+    font-family: Lato;
+    font-size: 50px;
+    color: #000000;
+    font-weight: 300;
+}
+
+
+.empty_cart button{
+    background-color: #d22749;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+
+}
+.empty_cart a{
+    text-decoration: none;
+    color: white;
+    font-family: Poppins;
+
+    font-size: 30px;
+}
+
+.jump {
+    box-shadow: 0 8px 15px rgba(0,0,0,.1);
+    transition: all .3s ease 0s;
+}
+
+.jump:hover {
+    background-color: #FED447;
+    box-shadow: 0 15px 20px rgba(211, 182, 48, 0.29);
+    transform: translateY(-7px);
+}
+
+
+/*RESPONSIVE*/
 
 @media (max-width: 900px) {
     main {
@@ -94,6 +164,7 @@ th, td {
     }
     table{
         padding: 5px;
+        width: 100%;
     }
     thead td{
         font-size: 15px;
@@ -131,4 +202,15 @@ th, td {
        font-size: 15px;
         margin: 0 auto 20px auto;
     }
+}
+
+/*MESSAGE CONFIRMATION*/
+
+.message{
+    text-align: center;
+    font-family: Poppins;
+    width: 100%;
+    background-color: #d4d4d4;
+    font-size: 30px;
+    padding: 20px 10px;
 }

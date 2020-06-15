@@ -13,10 +13,22 @@
 <header>
 
     <?php require 'partials/header.php'; ?>
-    <hr>
+
+    <?php if(isset($_SESSION['messages'])): ?>
+        <div class="message">
+            <?php foreach($_SESSION['messages'] as $message): ?>
+                <?= $message ?><br>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+    <?php if(!isset($_SESSION['messages'])): ?>
+        <hr>
+    <?php endif;?>
 </header>
 
 <main>
+
+
 
     <h1 class="title">NOS ABONNEMENTS - INSTAGRAM</h1>
     <h3 class="subtitle">Nous proposons 3 abonnements réservés pour Instagram afin d'accroître <br> progessivement ta popularité sur ce réseau !</h3>
@@ -27,13 +39,13 @@
             <h2><?= $plan['name']?></h2>
             <hr>
             <h4><?= $plan['tag']?></h4>
-            <h3><?= $plan['price']?> € / semaine</h3>
+            <h3><?= $plan['price']?> € / <?= $plan['duration']?></h3>
             <p><?= $plan['feature1']?></p>
             <p><?= $plan['feature2']?></p>
             <p><?= $plan['feature3']?></p>
             </p>
             <br>
-            <button><a href="">Commencer</a></button>
+            <button><a href="index.php?p=plans&action=addProduct&id=<?= $plan['id'] ?>">Commencer</a></button>
         </div>
         <?php endforeach;?>
     </div>

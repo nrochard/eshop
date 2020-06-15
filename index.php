@@ -2,14 +2,17 @@
 
 session_start();
 
-//if(!isset($_SESSION['cart'])){
-//    $_SESSION['cart'] = array();
-//}
+if(!isset($_SESSION['cart'])){
+    $_SESSION['cart'] = [];
+}
 
 require('helpers.php');
 
 if(isset($_GET['p'])):
     switch ($_GET['p']):
+        case 'product' :
+            require 'controllers/productController.php';
+            break;
         case 'category' :
             require 'controllers/categoryController.php';
             break;
@@ -38,7 +41,7 @@ if(isset($_GET['p'])):
             require 'controllers/politicalController.php';
             break;
         case 'plans' :
-            require 'controllers/plansController.php';
+            require 'controllers/planController.php';
             break;
         case 'planAdmin' :
             require 'controllers/planAdminController.php';
