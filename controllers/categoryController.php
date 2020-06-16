@@ -13,6 +13,6 @@ $categories = getCategories();
 
 $categorySelected = getCategory($_GET['category_id']);
 
-$products = getAllProducts();
+$products = getProductsCategory($_GET['category_id']);
 
 include 'views/category.php';

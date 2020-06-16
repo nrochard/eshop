@@ -25,7 +25,7 @@
     <section>
         <?php foreach($products as $product):?>
         <figure>
-            <a href="index.php?p=product&id=<?=$product['id']?>"><img src="assets/images/products/<?= $product['image']?>"></a>
+            <a href="index.php?p=product&action=displayProduct&id=<?=$product['id']?>"><img src="assets/images/products/<?= $product['image']?>"></a>
 
             <h2><?= $product['name']?></h2>
             <figcaption><?= $product['price']?> euros</figcaption>

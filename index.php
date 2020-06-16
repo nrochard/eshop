@@ -6,6 +6,10 @@ if(!isset($_SESSION['cart'])){
     $_SESSION['cart'] = [];
 }
 
+if(!isset($_SESSION['plan'])){
+    $_SESSION['plan'] = [];
+}
+
 require('helpers.php');
 
 if(isset($_GET['p'])):

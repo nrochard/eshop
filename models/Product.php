@@ -15,6 +15,7 @@ function getAllProducts(){
 
 }
 
+
 function getProduct($productId){
     $db = dbConnect();
     $query = $db->query('SELECT * FROM products WHERE id = ' . $productId);
@@ -22,6 +23,9 @@ function getProduct($productId){
 
     return $selectedProduct;
 }
+
+
+
 
 function addProduct($informations)
 {
@@ -81,23 +85,7 @@ function addProduct($informations)
     return $result;
 }
 
-function getProductCategories($productId){
 
-    $db = dbConnect();
-
-    $query = $db-> prepare("
-        SELECT c.*
-        FROM categories c 
-        INNER JOIN product_categories pc ON c.id = pc.category_id
-        WHERE pc.product_id = ?");
-
-    $query->execute([
-        $productId,
-    ]);
-
-    return $query->fetchAll();
-
-}
 
 function updateProduct($id, $informations){
 
@@ -173,7 +161,7 @@ function deleteProduct($id)
 
     $product = getProduct($id);
     if ($product['image'] != NULL){
-        unlink('../assets/images/product/'.$product['image']);
+        unlink('../assets/images/products/'.$product['image']);
     }
 
 
@@ -183,4 +171,54 @@ function deleteProduct($id)
     return $result;
 }
 
+function getProductCategories($productId){
 
+    $db = dbConnect();
+
+    $query = $db-> prepare("
+        SELECT c.*
+        FROM categories c 
+        INNER JOIN product_categories pc ON c.id = pc.category_id
+        WHERE pc.product_id = ?");
+
+    $query->execute([
+        $productId,
+    ]);
+
+    return $query->fetchAll();
+
+}
+
+
+function getProductsCategory($categoryId){
+    $db = dbConnect();
+
+    $query = $db-> prepare("
+        SELECT p.*
+        FROM products p
+        JOIN product_categories pc ON p.id = pc.product_id
+        WHERE pc.category_id = ?");
+
+    $query->execute([
+        $categoryId,
+    ]);
+//    var_dump($categoryId);
+//    var_dump($query->fetchAll());
+//    die();
+    return $query->fetchAll();
+
+}
+
+function addProductToCart($id){
+    $db = dbConnect();
+    $query = $db->query('SELECT * FROM products WHERE id = ' . $id);
+    $productToCart = $query->fetch();
+
+//    $_SESSION['cart'] = [
+//        'name' => $productToCart['name'],
+//        'price' => $productToCart['price'],
+//        'description' => $productToCart['description'],
+//        'is_activated' => $productToCart['is_activated'],
+//        'image' => $productToCart['image'],
+//    ];
+}

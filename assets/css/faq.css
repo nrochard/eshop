@@ -15,10 +15,10 @@ main{
 
 .subtitle{
     text-align: center;
-    font-family: Poppins;
+    font-family: Lato;
     font-size: 28px;
-    font-weight: 400;
     padding-bottom: 70px;
+    font-weight: 300;
 }
 
 
@@ -86,20 +86,21 @@ p{
         padding: 0 20px 80px 20px;
     }
     .accordion{
-        font-size: 20px;
+        font-size: 18px;
     }
     .title{
-        font-size: 25px;
+        font-size: 22px;
         padding: 40px 10px 0px 10px;
     }
 
     .subtitle{
-        font-size: 22px;
+        font-size: 17px;
+        padding-bottom: 20px;
     }
     p{
-        font-size: 20px;
+        font-size: 18px;
     }
     .others{
-        font-size: 18px;
+        font-size: 15px;
     }
 }

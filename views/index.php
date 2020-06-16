@@ -72,8 +72,8 @@
                 <h3>Icône, ça marche comment ?</h3>
                 <p>
                     Grâce à notre intelligence artificielle en quelques jours nous
-                    pouvons accroître votre  visibilité sur votre réseau.
-                    <span id="dots3">..</span>
+                    pouvons accroître votre  visibilité sur votre réseau.<span id="dots3">..</span>
+
                 </p>
 
                 <button id="bouton3" onclick="affiche3();">Lire plus</button>

@@ -86,6 +86,53 @@ main{
 
 }
 
+
+/*RESPONSIVE*/
+
+@media(max-width: 900px){
+    main{
+        padding: 0 10px 80px 10px;
+    }
+    .title{
+        font-size: 22px;
+        padding: 40px 10px 0px 10px;
+    }
+
+    .subtitle{
+        font-size: 17px;
+        padding-bottom: 20px;
+    }
+    .plans{
+        flex-direction: column;
+    }
+    .plans div{
+        margin-top: 50px;
+    }
+    .plans h2{
+        font-size: 22px;
+    }
+    .plans h4{
+        font-size: 20px;
+    }
+
+    .plans h3{
+        color: #1893f3;
+        font-size: 30px;
+        text-align: center;
+        font-weight: 800;
+    }
+
+    .plans p{
+        font-size: 19px;
+        text-align: center;
+        margin-bottom: 50px;
+        font-weight: 400;
+    }
+    .plans button a{
+        font-size: 23px;
+    }
+
+}
 /*MESSAGE CONFIRMATION*/
 
 .message{

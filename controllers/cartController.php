@@ -2,23 +2,37 @@
 
 require_once 'models/Category.php';
 require_once 'models/Plan.php';
+require_once 'models/Product.php';
 
 $categories = getCategories();
 
 if($_GET['action'] == 'display'){
-
+    var_dump($_SESSION['plan']);
     var_dump($_SESSION['cart']);
-    $categories = getCategories();
     $selectedPlan = [];
-    if (isset($_SESSION['cart']['plan'])) {
-        $selectedPlan = getPlan($_SESSION['cart']['plan']);
+    if (!empty($_SESSION['plan'])) {
+        $selectedPlan = getPlan($_SESSION['plan']);
     }
-//    var_dump($selectedPlan);
+    foreach ($_SESSION['cart'] as $product_id => $quantity){
+//        var_dump($_SESSION['cart'][$product_id]);
+        $cartProducts[] = getProduct($product_id);
+    }
+//    var_dump($cartProducts);
     include 'views/cart.php';
 }
 
-if($_GET['action'] == 'deletePlan'){
-    unset($_SESSION['cart']['plan']);
+else if($_GET['action'] == 'deletePlan'){
+    var_dump($_SESSION['plan']);
+    unset($_SESSION['plan']);
+    $selectedPlan = [];
+    $_SESSION['messages'][] = 'Votre abonnement à bien été supprimé !';
+
+    include 'views/cart.php';
+}
+
+else if($_GET['action'] == 'deleteProduct'){
+    var_dump($_SESSION['plan']);
+    unset($_SESSION['cart']);
     $selectedPlan = [];
     $_SESSION['messages'][] = 'Votre abonnement à bien été supprimé !';
 

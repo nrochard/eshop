@@ -29,7 +29,7 @@
 
     <h1 class="title">VOTRE PANIER </h1>
 
-    <?php if (!empty($_SESSION['cart'])) : ?>
+    <?php if (!empty($_SESSION['plan']) || !empty($_SESSION['cart'])) : ?>
     <div class="cart">
         <div class="list_product">
             <table>
@@ -44,6 +44,18 @@
                 </tr>
                 <?php endif;?>
                 </thead>
+                <thead>
+                <?php foreach($cartProducts as $cartProduct):?>
+                    <tr>
+                        <td><img src="assets/images/products/<?= $cartProduct['image']?>"></td>
+                        <td> <?= $cartProduct['name']?></td>
+                        <td>Quantité : <?= $_SESSION['cart'][$product_id]?></td>
+                        <td><?= $cartProduct['price']?>€</td>
+                        <td><button><a href="index.php?p=cart&action=deleteProduct&id=<?=$cartProduct['id']?>">Supprimer</a></button></td>
+                    </tr>
+                <?php endforeach;?>
+                </thead>
+
             </table>
         </div>
         <div class="recap_product">
@@ -58,7 +70,7 @@
     </div>
     <?php endif;?>
 
-    <?php if (!isset($_SESSION['cart']['plan'])) : ?>
+    <?php if (empty($_SESSION['plan']) && empty($_SESSION['cart'])) : ?>
     <div class="empty_cart">
         <img src="assets/flavicon/shopping-bag.svg">
         <h3>Votre panier est actuellement vide.</h3>
