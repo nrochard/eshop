@@ -1,6 +1,10 @@
 <?php
 
-//action = new
+require_once 'models/User.php';
+require_once 'models/Order.php';
+require_once 'models/Category.php';
+
+$categories = getCategories();
 
 if ($_GET['action'] == 'validate'){
     if(!empty($_POST)){
@@ -25,33 +29,36 @@ if ($_GET['action'] == 'validate'){
             exit;
         }
         else{
-            header('Location:index.php?p=order&action=displayOrder');
+            header('Location:index.php?p=order&action=new');
             exit;
         }
     }
-//    else{
-//        if(!isset($_SESSION['old_inputs'])){
-//            if(isset($_GET['id'])){
-//                $question = getQuestion($_GET['id']);
-//                if($question == false){
-//                    header('Location:index.php?p=faqAdmin&action=list');
-//                    exit;
-//                }
-//            }
-//            else{
-//                header('Location:index.php?p=faqAdmin&action=list');
-//                exit;
-//            }
-//
-//        }
-//        require('views/faqForm.php');
-//    }
 }
 
 
-if ($_GET['action'] == 'displayOrder') {
+else if ($_GET['action'] == 'new') {
+//    var_dump($_SESSION['total']);
+    $userInformations = getUser($_SESSION['user']['id']);
+    $newOrder = addOrder($userInformations, $_SESSION['total']);
+
     include 'views/order.php';
 }
+
+else if ($_GET['action'] == 'list') {
+//    var_dump($_SESSION['user']['id']);
+    $orders = getOrdersOfUser($_SESSION['user']['id']);
+//    var_dump($orders);
+    include 'views/orderUser.php';
+}
+
+
+else if ($_GET['action'] == 'view') {
+
+//    $order = createOrder();
+//    include 'views/order.php';
+}
+
+
 //verifier si l'utilosateur est connecte
 // if isset $_SESSISON['user']
 //sinon redigirier vers les formulaires

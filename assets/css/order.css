@@ -1,0 +1,85 @@
+
+/*Titre de la page*/
+
+.title{
+    text-align: center;
+    font-family: Oswald;
+    font-size: 40px;
+    padding: 0 40px 10px 40px;
+}
+
+.subtitle{
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 300;
+    text-align: center;
+}
+
+
+/*Bouton retour en arrière*/
+
+.return{
+    padding: 30px;
+}
+
+.return img{
+    width: 30px;
+}
+
+.return a{
+    vertical-align: top;
+    font-size: 25px;
+    color: black;
+    font-family: Lato;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.return a:hover{
+    border-bottom: 1px solid black;
+}
+
+/*TABLEAU DES COMMANDES D'UN USER'*/
+
+.container_table{
+    margin: 100px 150px;
+}
+table{
+    /*margin: 100px 150px;*/
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th{
+    text-align: left;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+th{
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: #e6e6e6;
+}
+
+td{
+     font-family: Lato;
+     font-size: 25px;
+
+ }
+
+@media (max-width: 900px) {
+    .container_table{
+        margin: 50px 10px;
+    }
+
+    th{
+        font-size: 15px;
+    }
+
+    td{
+        font-family: Lato;
+        font-size: 12px;
+    }
+}

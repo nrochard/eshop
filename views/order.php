@@ -18,7 +18,9 @@
 </header>
 
 <main>
-    COMMANDE VALIDÉ
+    <h1 class="title">Votre commande à été validé  </h1>
+    <h3 class="subtitle">Retrouver ici le résumé de votre commande et un mail vous à été envoyé !</h3>
+
 
 </main>
 

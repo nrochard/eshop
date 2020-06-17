@@ -43,7 +43,7 @@
                     <?php endif;?>
                     <a href="index.php?p=dashboard&action=edit&id=<?= $_SESSION['user']['id'] ?>">Mes informations</a> <br> <hr> <br>
                     <!--                <a href="">Mes réseaux sociaux</a> <br> <hr> <br>-->
-                    <a href="">Mes commandes</a> <br> <hr> <br>
+                    <a href="index.php?p=order&action=list">Mes commandes</a> <br> <hr> <br>
                     <a href="index.php?p=dashboard&action=disconnect">Déconnexion</a> <br> <hr>
                 </div>
             </div>

@@ -66,7 +66,7 @@
             <h2 class="recap_name">Récapitulatif</h2>
             <hr>
             <p>Total :<span class="total"> <?= $total ?> €</span></p>
-
+            <?php $_SESSION['total'] = $total ?>
             <button class="jump2"><a>Continuer mes achats</a></button> <br>
             <button class="jump3"><a href="index.php?p=<?= isset($_SESSION['user']['firstname']) ? 'payment&action=form' : 'login' ?>">Payer mon panier</a></button>
             <div>

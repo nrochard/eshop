@@ -22,7 +22,7 @@ if($_GET['action'] == 'display'){
 }
 
 else if($_GET['action'] == 'deletePlan'){
-    var_dump($_SESSION['plan']);
+//    var_dump($_SESSION['plan']);
     unset($_SESSION['plan']);
     $selectedPlan = [];
     $_SESSION['messages'][] = 'Votre abonnement à bien été supprimé !';
@@ -31,10 +31,10 @@ else if($_GET['action'] == 'deletePlan'){
 }
 
 else if($_GET['action'] == 'deleteProduct'){
-    var_dump($_SESSION['plan']);
+//    var_dump($_SESSION['plan']);
     unset($_SESSION['cart']);
     $selectedPlan = [];
-    $_SESSION['messages'][] = 'Votre abonnement à bien été supprimé !';
+    $_SESSION['messages'][] = 'Votre produit à bien été supprimé !';
 
     include 'views/cart.php';
 }
