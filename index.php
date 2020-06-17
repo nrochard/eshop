@@ -17,6 +17,9 @@ if(isset($_GET['p'])):
         case 'product' :
             require 'controllers/productController.php';
             break;
+        case 'order' :
+            require 'controllers/orderController.php';
+            break;
         case 'category' :
             require 'controllers/categoryController.php';
             break;
@@ -67,6 +70,9 @@ if(isset($_GET['p'])):
             break;
         case 'productAdmin' :
             require 'controllers/productAdminController.php';
+            break;
+        case 'payment' :
+            require 'controllers/paymentController.php';
             break;
         case 'cart' :
             require 'controllers/cartController.php';

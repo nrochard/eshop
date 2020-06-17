@@ -15,7 +15,7 @@ elseif($_GET['action'] == 'new'){
 
 elseif($_GET['action'] == 'add'){
 
-    if(empty($_POST['name']) || empty($_POST['price']) || empty($_POST['description']) || empty($_POST['quantity'])){
+    if(empty($_POST['name']) || empty($_POST['price']) || empty($_POST['description']) || empty($_POST['quantity']) || empty($_POST['category_id']) || empty($_FILES['image'])){
         if(empty($_POST['name'])){
             $_SESSION['messages'][] = 'Le champ nom est obligatoire !';
         }
@@ -30,7 +30,12 @@ elseif($_GET['action'] == 'add'){
         else if(empty($_POST['quantity'])){
             $_SESSION['messages'][] = 'Le champ quantité est obligatoire !';
         }
-
+        else if(empty($_POST['category_id'])){
+            $_SESSION['messages'][] = 'Le champ catégorie est obligatoire !';
+        }
+        else if(empty($_FILES['image'])){
+            $_SESSION['messages'][] = 'Le champ image est obligatoire !';
+        }
 
         $_SESSION['old_inputs'] = $_POST;
         header('Location:index.php?p=productAdmin&action=new');
@@ -49,7 +54,7 @@ elseif($_GET['action'] == 'add'){
 elseif($_GET['action'] == 'edit') {
 
     if(!empty($_POST)){
-        if(empty($_POST['name']) || empty($_POST['price']) || empty($_POST['description']) || empty($_POST['quantity'])){
+        if(empty($_POST['name']) || empty($_POST['price']) || empty($_POST['description']) || empty($_POST['quantity']) || empty($_POST['category_id']) || empty($_FILES['image'])){
             if(empty($_POST['name'])){
                 $_SESSION['messages'][] = 'Le champ nom est obligatoire !';
             }
@@ -64,6 +69,13 @@ elseif($_GET['action'] == 'edit') {
             else if(empty($_POST['quantity'])){
                 $_SESSION['messages'][] = 'Le champ quantité est obligatoire !';
             }
+            else if(empty($_POST['category_id'])){
+                $_SESSION['messages'][] = 'Le champ catégorie est obligatoire !';
+            }
+            else if(empty($_FILES['image'])){
+                $_SESSION['messages'][] = 'Le champ image est obligatoire !';
+            }
+
             $_SESSION['old_inputs'] = $_POST;
             header('Location:index.php?p=productAdmin&action=edit&id='.$_GET['id']);
             exit;

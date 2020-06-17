@@ -15,12 +15,15 @@ main{
     flex-wrap: wrap;
 }
 
+.list_product{
+    width: 60%;
+}
 
 table{
     box-shadow: 8px 8px 12px #aaa;
     padding: 10px;
     font-family: Lato;
-    width: 1300px;
+    width: 100%;
 }
 
 thead td:nth-child(1) {
@@ -31,6 +34,7 @@ thead td:nth-child(2) {
     width: 35%;
     font-size: 25px;
     font-weight: 600;
+    color: #067BC2;
 }
 
 thead td:nth-child(3) {
@@ -53,14 +57,14 @@ img{
     width: 100px;
 }
 
-button{
+.delete{
     background-color: #d22749;
     outline: 0;
     border: none;
     padding: 10px;
 }
 
-button:hover{
+.delete:hover{
     background-color: #a4a4a4;
 }
 
@@ -83,31 +87,11 @@ a{
 .recap_product p{
     padding: 30px 50px;
     font-family: Lato;
-    font-size: 25px;
-    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 300;
 }
 
-.recap_product button{
-    margin: 0 auto 50px auto;
-    font-size: 25px;
-    display: block;
-    padding: 20px;
-    font-family: Poppins;
-    width: 70%;
-}
-.recap_product button:nth-child(6){
-    background-color: #b5b5b5;
-    color: #000000;
-    border: none;
-    outline: 0;
-}
-
-.recap_product button:last-child{
-    background-color: black;
-    color: white;
-    border: none;
-    outline: 0;
-}
 
 /*PAGE PANIER VIDE*/
 
@@ -142,6 +126,21 @@ a{
     font-size: 30px;
 }
 
+.recap_product div{
+    text-align: center;
+}
+.recap_product div img{
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+.total{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/*EFFET BOUTON HOVER*/
+
 .jump {
     box-shadow: 0 8px 15px rgba(0,0,0,.1);
     transition: all .3s ease 0s;
@@ -153,15 +152,77 @@ a{
     transform: translateY(-7px);
 }
 
+.jump2 {
+    box-shadow: 0 8px 15px rgba(0,0,0,.1);
+    transition: all .3s ease 0s;
+    margin: 0 auto 50px auto;
+    font-size: 25px;
+    display: block;
+    padding: 20px;
+    font-family: Poppins;
+    width: 70%;
+    background-color: #dfdfdf;
+    border: none;
+}
+
+.jump2 a{
+    color: black;
+}
+
+.jump2:hover {
+    background-color: #969696;
+    box-shadow: 0 15px 20px rgba(177, 177, 177, 0.41);
+    transform: translateY(-7px);
+}
+
+.jump3 {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+    transition: all .3s ease 0s;
+    margin: 0 auto 50px auto;
+    font-size: 25px;
+    display: block;
+    padding: 20px;
+    font-family: Poppins;
+    width: 70%;
+    border: none;
+    background-color: black;
+}
+
+.jump3:hover {
+    background-color: #d22749;
+    box-shadow: 0 15px 20px rgba(255, 0, 56, 0.29);
+    transform: translateY(-7px);
+}
 
 /*RESPONSIVE*/
 
+@media (max-width: 1000px) {
+    .recap_product{
+        text-align: center;
+    }
+
+}
+
 @media (max-width: 900px) {
+
+    .list_product{
+        width: 100%;
+    }
+    .recap_product{
+        width: 100%;
+    }
+    .delete a{
+        font-size: 10px;
+    }
+    img{
+        width: 50px;
+    }
     main {
-        padding: 20px 0;
+        padding: 10px 0;
     }
     .cart{
        margin: 30px 0;
+        flex-direction: column;
     }
     table{
         padding: 5px;
@@ -190,10 +251,10 @@ a{
     }
     .title {
         font-size: 25px;
-        padding: 20px 0;
+        padding: 5px 0;
     }
     .recap_name{
-        font-size: 20px;
+        font-size: 17px;
         padding: 10px;
     }
     .recap_product p{
@@ -203,6 +264,25 @@ a{
     .recap_product button{
        font-size: 15px;
         margin: 0 auto 20px auto;
+    }
+    thead td:nth-child(1) {
+        width: 0%;
+    }
+
+    thead td:nth-child(2) {
+        width: 35%;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    thead td:nth-child(3) {
+        width: 20%;
+        font-size: 9px;
+    }
+
+    thead td:nth-child(4){
+        font-size: 12px;
+        width: 10%;
     }
 }
 

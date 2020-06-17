@@ -45,14 +45,18 @@
                 <?php endif;?>
                 </thead>
                 <thead>
-                <?php foreach($cartProducts as $cartProduct):?>
+                <?php $total = 0;
+                foreach($cartProducts as $cartProduct):?>
                     <tr>
                         <td><img src="assets/images/products/<?= $cartProduct['image']?>"></td>
                         <td> <?= $cartProduct['name']?></td>
-                        <td>Quantité : <?= $_SESSION['cart'][$product_id]?></td>
-                        <td><?= $cartProduct['price']?>€</td>
-                        <td><button><a href="index.php?p=cart&action=deleteProduct&id=<?=$cartProduct['id']?>">Supprimer</a></button></td>
+                        <td>Quantité : <?= $_SESSION['cart'][$cartProduct['id']] ?></td>
+                        <td><?= $cartProduct['price']?>€
+                            <?php $total += $cartProduct['price'] * $_SESSION['cart'][$cartProduct['id']]?>
+                        </td>
+                        <td><button class="delete"><a href="index.php?p=cart&action=deleteProduct&id=<?=$cartProduct['id']?>">Supprimer</a></button></td>
                     </tr>
+
                 <?php endforeach;?>
                 </thead>
 
@@ -61,11 +65,14 @@
         <div class="recap_product">
             <h2 class="recap_name">Récapitulatif</h2>
             <hr>
-            <p>Prix HT : </p>
-            <p>Prix TVA : </p>
-            <p>Total : </p>
-            <button><a>Continuer mes achats</a></button> <br>
-            <button><a>Payer mon panier</a></button>
+            <p>Total :<span class="total"> <?= $total ?> €</span></p>
+
+            <button class="jump2"><a>Continuer mes achats</a></button> <br>
+            <button class="jump3"><a href="index.php?p=<?= isset($_SESSION['user']['firstname']) ? 'payment&action=form' : 'login' ?>">Payer mon panier</a></button>
+            <div>
+                <img src="assets/images/card.jpg">
+            </div>
+
         </div>
     </div>
     <?php endif;?>
@@ -79,18 +86,6 @@
 
     <?php endif;?>
 </main>
-
-<!--$total = 0-->
-<!---->
-<!--for each $cartProducts $product-->
-<!---->
-<!--echo $rowtotal = $product[price] * S_SESSION['cart'][$product['id']]['quantity']-->
-<!--$total += $rowtotal-->
-<!---->
-<!--endforeach-->
-
-<!--<a href="index.php?p=cart&action=deleteProduct&productId=$product['id]"></a>-->
-<!--echo $total-->
 
 <!--if isset $_SESSIONS[user]-->
 <!--    <a href="index.php?p=order&action=new">Commander</a>-->

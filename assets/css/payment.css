@@ -1,0 +1,92 @@
+.title{
+    text-align: center;
+    font-family: Oswald;
+    font-size: 40px;
+    padding: 40px 40px 0px 40px;
+}
+
+.subtitle{
+    text-align: center;
+    font-family: Lato;
+    font-size: 28px;
+    padding-bottom: 70px;
+    font-weight: 300;
+}
+
+container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0;
+    width: 100%;
+}
+
+main{
+    margin-bottom: 100px;
+}
+.container form{
+    text-align: center;
+}
+
+.container input{
+    padding: 20px 100px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-family: Lato;
+    background-color: white;
+    font-size: 25px;
+    border: black 1px solid;
+    font-weight: 200;
+    /*box-shadow: 8px 8px 12px #aaa;*/
+}
+
+.container select{
+    margin-bottom: 70px;
+    font-family: Lato;
+    background-color: white;
+    font-size: 25px;
+    border: black 1px solid;
+    font-weight: 200;
+}
+
+.container label{
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+.container button{
+    display: block;
+    margin: 0 auto;
+    font-family: Lato;
+    font-size: 30px;
+    padding: 20px 40px;
+    color: white;
+    border: none;
+    background-color: black;
+}
+
+.container button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.container a:visited{
+    color: black;
+}
+.container a:hover{
+    color: darkgrey;
+}
+
+small{
+    font-family: Lato;
+}
+
+.message{
+    text-align: center;
+    font-family: Poppins;
+    font-size: 25px;
+    color: #3B97F3;
+}

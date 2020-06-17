@@ -18,8 +18,9 @@ if($_GET['action'] == 'displayProduct'){
 
 
 if($_GET['action'] == 'addProduct'){
+//    unset($_SESSION['cart']);
     $product = getProduct($_GET['product_id']);
-//    var_dump($_POST['quantity']);
+    var_dump($_POST['quantity']);
     if (empty($_POST['quantity'])){
         $_SESSION['messages'][] = 'Le champ quantité est obligatoire !';
     }

@@ -62,9 +62,6 @@
             <small>* Champs obligatoires</small>
 
             <button type="submit">M'inscrire !</button>
-
-
-
         </form>
 
     </div>

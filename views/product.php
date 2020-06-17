@@ -40,7 +40,7 @@
             <p><?=$product['price']?>€ </p>
             <form action="index.php?p=product&action=addProduct&product_id=<?=$product['id']?>" method="post">
                 <label for="quantity"></label>
-                <input type="text" name="quantity" id="quantity" placeholder="Quantité">
+                <input type="number" name="quantity" id="quantity" placeholder="Quantité">
                 <br>
                 <button class="slide" type="submit">Ajouter au panier</button>
             </form>

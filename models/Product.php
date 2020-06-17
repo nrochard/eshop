@@ -70,7 +70,7 @@ function addProduct($informations)
 
         if($result)
         {
-            $allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png' );
+            $allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png', 'svg' );
             $my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
             if (in_array($my_file_extension , $allowed_extensions)){
                 $new_file_name = $productId . '.' . $my_file_extension ;
@@ -135,7 +135,7 @@ function updateProduct($id, $informations){
 
     if($result && !empty($_FILES['image']['tmp_name'])){
 
-        $allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png');
+        $allowed_extensions = array( 'jpg' , 'jpeg' , 'gif', 'png', 'svg');
         $my_file_extension = pathinfo( $_FILES['image']['name'] , PATHINFO_EXTENSION);
         if (in_array($my_file_extension , $allowed_extensions)){
 
