@@ -11,22 +11,24 @@
 <body>
 
 <header>
-
     <?php require 'partials/header.php'; ?>
-    <hr>
+
+    <?php if(isset($_SESSION['messages'])): ?>
+        <div class="message">
+            <?php foreach($_SESSION['messages'] as $message): ?>
+                <?= $message ?><br>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+    <?php if(!isset($_SESSION['messages'])): ?>
+        <hr>
+    <?php endif;?>
 </header>
 
 <main>
 
     <h1 class="title">TABLEAU DE BORD</h1>
     <div class="container">
-        <?php if(isset($_SESSION['messages'])): ?>
-            <div class="message">
-                <?php foreach($_SESSION['messages'] as $message): ?>
-                    <?= $message ?><br>
-                <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
 
         <div class="main_dashoboard">
             <div class="menu">

@@ -7,8 +7,8 @@ require_once 'models/Product.php';
 $categories = getCategories();
 
 if($_GET['action'] == 'display'){
-    var_dump($_SESSION['plan']);
-    var_dump($_SESSION['cart']);
+//    var_dump($_SESSION['plan']);
+//    var_dump($_SESSION['cart']);
     $selectedPlan = [];
     if (!empty($_SESSION['plan'])) {
         $selectedPlan = getPlan($_SESSION['plan']);
@@ -23,20 +23,23 @@ if($_GET['action'] == 'display'){
 
 else if($_GET['action'] == 'deletePlan'){
 //    var_dump($_SESSION['plan']);
-    unset($_SESSION['plan']);
+
     $selectedPlan = [];
     $_SESSION['messages'][] = 'Votre abonnement à bien été supprimé !';
+    unset($_SESSION['plan']);
 
-    include 'views/cart.php';
+    header('Location:index.php?p=cart&action=display');
+    exit;
 }
 
 else if($_GET['action'] == 'deleteProduct'){
-//    var_dump($_SESSION['plan']);
-    unset($_SESSION['cart']);
+    var_dump($_SESSION['cart']);
+    unset($_SESSION['cart'][$_GET['id']]);
     $selectedPlan = [];
     $_SESSION['messages'][] = 'Votre produit à bien été supprimé !';
 
-    include 'views/cart.php';
+    header('Location:index.php?p=cart&action=display');
+    exit;
 }
 
 

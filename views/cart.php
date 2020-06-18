@@ -34,19 +34,21 @@
         <div class="list_product">
             <table>
                 <thead>
-                <?php if ($selectedPlan) :?>
+                <?php if ($selectedPlan) :
+                    $total = 0?>
                 <tr>
                     <td><img src="assets/flavicon/instagram.png"></td>
                     <td>Abonnement <?= $selectedPlan['name']?></td>
                     <td>Quantité : 1</td>
                     <td><?= $selectedPlan['price']?>€ / <?= $selectedPlan['duration']?></td>
-                    <td><button><a href="index.php?p=cart&action=deletePlan">Supprimer</a></button></td>
+                    <td><button class="delete"><a href="index.php?p=cart&action=deletePlan">Supprimer</a></button></td>
                 </tr>
                 <?php endif;?>
                 </thead>
                 <thead>
+                <?php if (!empty($_SESSION['cart'])) :?>
                 <?php $total = 0;
-                foreach($cartProducts as $cartProduct):?>
+                    foreach($cartProducts as $cartProduct):?>
                     <tr>
                         <td><img src="assets/images/products/<?= $cartProduct['image']?>"></td>
                         <td> <?= $cartProduct['name']?></td>
@@ -56,8 +58,8 @@
                         </td>
                         <td><button class="delete"><a href="index.php?p=cart&action=deleteProduct&id=<?=$cartProduct['id']?>">Supprimer</a></button></td>
                     </tr>
-
-                <?php endforeach;?>
+                    <?php endforeach;?>
+                <?php endif;?>
                 </thead>
 
             </table>

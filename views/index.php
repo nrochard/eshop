@@ -42,8 +42,8 @@
                 <p id="cache" style="display: none">
                     Nous proposons nos services sur
                     les réseaux les plus utilisés
-                    dans le monde. <br>
-
+                    dans le monde.
+                    <br><br>
                     Alors, n’attendez plus et consacrez
                     votre activité à créer du contenu ;
                     nous nous occupons du reste !
@@ -61,8 +61,8 @@
                 <p id="cache2" style="display: none">
                     Développez votre activité pour
                     faire de la pub ou simplement augmenter
-                    votre crédibilité.<br>
-
+                    votre crédibilité.
+                    <br><br>
                     Propulsez vos comptes personnels et/ou
                     professionnels pour devenir un incontournable à follow.
                 </p>
@@ -71,9 +71,16 @@
             <div class="how">
                 <h3>Icône, ça marche comment ?</h3>
                 <p>
-                    Grâce à notre intelligence artificielle en quelques jours nous
-                    pouvons accroître votre  visibilité sur votre réseau.<span id="dots3">..</span>
-
+                    Grâce à notre intelligence artificielle, en quelques jours nous
+                    pouvons accroître votre visibilité sur vos réseaux.<span id="dots3">..</span>
+                </p>
+                <p id="cache3" style="display: none">
+                    Notre équipe conçoit une stratégie etl'améliore au fil du
+                    temps. Il s’agit d’optimiser l’ensemble du processus afin
+                    d'améliorer les résultats au quotidien afin que vous n’ayez rien à faire.
+                    <br><br>
+                    Vous n'êtes pas seuls, cette technologie est utilisée par les comptes
+                    les plus performants et populaire sur tout les réseaux.
                 </p>
 
                 <button id="bouton3" onclick="affiche3();">Lire plus</button>
@@ -87,7 +94,7 @@
         </h2>
         <div class="number_counter">
             <div>
-                <h4>109 847</h4>
+                <h4>109 846</h4>
                 <img src="assets/flavicon/heart.png">
                 <p>Nombre de likes vendues</p>
             </div>

@@ -56,7 +56,7 @@ function connectUser($informations)
 function updateUser($id, $informations){
     $db = dbConnect();
 
-    $query = $db->prepare('UPDATE users SET firstname = ?, lastname = ?, email = ?, city = ?, adress = ? WHERE id = ?');
+    $query = $db->prepare('UPDATE users SET firstname = ?, lastname = ?, email = ?, city = ?, adress = ?, password = ? WHERE id = ?');
 
     $result = $query->execute(
         [
@@ -65,6 +65,7 @@ function updateUser($id, $informations){
             $informations['email'],
             $informations['city'],
             $informations['adress'],
+            hash('md5', $informations['password']),
             $id,
         ]
     );

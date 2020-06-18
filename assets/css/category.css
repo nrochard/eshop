@@ -1,8 +1,8 @@
-.category_name{
+.title{
     text-align: center;
     font-family: Oswald;
-    padding-top: 50px;
     font-size: 40px;
+    padding: 40px 40px 0px 40px;
     text-transform: uppercase;
 }
 
@@ -13,6 +13,7 @@
     font-weight: 300;
     padding-bottom: 70px;
 }
+
 main{
     margin: 0 auto 150px auto;
 }
@@ -58,11 +59,22 @@ figure img{
     box-shadow: 8px 8px 12px #aaa;
 }
 @media (max-width: 900px){
-    .category_name{
-        font-size: 40px;
-        padding-top: 120px;
-    }
     figure{
         width: 50%;
+    }
+    .title{
+        font-size: 25px;
+        padding: 40px 10px 0px 10px;
+    }
+
+    .subtitle{
+        font-size: 18px;
+        padding-bottom: 0;
+    }
+    h2{
+        font-size: 20px;
+    }
+    figcaption{
+        font-size: 25px;
     }
 }

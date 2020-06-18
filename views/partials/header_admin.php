@@ -16,6 +16,9 @@
                 </div>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="index.php?p=orderAdmin&action=list">Commandes</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="index.php?p=userAdmin&action=list">Utilisateurs</a>
             </li>
             <li class="nav-item">

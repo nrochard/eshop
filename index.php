@@ -20,6 +20,9 @@ if(isset($_GET['p'])):
         case 'order' :
             require 'controllers/orderController.php';
             break;
+        case 'orderAdmin' :
+            require 'controllers/orderAdminController.php';
+            break;
         case 'category' :
             require 'controllers/categoryController.php';
             break;

@@ -19,29 +19,29 @@
 <main>
     <div class="return">
         <img src="assets/flavicon/back.svg">
-        <a href="index.php?p=dashboard&action=list">Retour au tableau de bord</a>
+        <a href="index.php?p=order&action=list">Retour à la liste des commandes</a>
     </div>
 
-    <h1 class="title">VOS COMMANDES </h1>
-    <h3 class="subtitle">Retrouver ici la liste de vos commandes.</h3>
+    <h1 class="title">DÉTAILS DE LA COMMANDE <?= $_GET['orderId'] ?> </h1>
+    <h3 class="subtitle">Retrouver ici les produits achetés lors de cette commande.</h3>
 
     <div class="container_table">
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Numéro de commande</th>
-                <th>Date</th>
+                <th>Nom du produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
                 <th>Prix total</th>
-                <th></th>
             </tr>
             </thead>
             <tbody>
-            <?php foreach($orders as $order):?>
+            <?php foreach($detailsOrder as $detailOrder):?>
                 <tr>
-                    <td><?= $order['id']?></td>
-                    <td><?= $order['date']?></td>
-                    <td><?= $order['price']?>€</td>
-                    <td><a href="index.php?p=order&action=view&orderId=<?= $order['id']?>" class="details_order">Voir le détail</a></td>
+                    <td><?= $detailOrder['name']?></td>
+                    <td><?= $detailOrder['price']?>€</td>
+                    <td><?= $detailOrder['quantity']?></td>
+                    <td><?= $detailOrder['price'] * $detailOrder['quantity']?>€</td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

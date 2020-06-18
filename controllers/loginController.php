@@ -38,7 +38,9 @@ if($_GET['action'] == 'connect') {
                 exit;
             }
             else {
-                $_SESSION['messages'][] = 'Il semble que votre adresse e-mail ou votre mot de passe soient incorrects. Veuillez essayer à nouveau, s\'il vous plaî!';
+                $_SESSION['messages'][] = 'Il semble que votre adresse e-mail ou votre mot de passe soient incorrects. Veuillez essayer à nouveau, s\'il vous plaît!';
+                header('Location:index.php?p=login&action=formLogin');
+                exit;
             }
         }
     }

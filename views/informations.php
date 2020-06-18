@@ -58,6 +58,13 @@
             <input id="email" type="email" name="email" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['email'] : '' ?><?= isset($user) ? $user['email'] : ''?>"><br>
 
 
+            <label for="password">Mot de passe : </label><br>
+            <small>Si vous souhaitez changer de mot de passe, veuillez en saisir un nouveau. Sinon, laissez le champ vide.</small>
+            <br>
+            <input id="password" type="text" name="password"><br>
+
+            <br>
+
             <small>* Champs obligatoires</small>
 
             <button type="submit">Modifier !</button>

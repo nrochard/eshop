@@ -1,4 +1,6 @@
-
+.container{
+    padding: 50px 100px 80px 100px;
+}
 /*Titre de la page*/
 
 .title{
@@ -81,5 +83,87 @@ td{
     td{
         font-family: Lato;
         font-size: 12px;
+    }
+}
+
+p{
+    text-align: center;
+    font-family: Oswald;
+    padding-top: 30px;
+    font-size: 30px;
+}
+
+/*BOUTON */
+
+.home_button{
+    margin-top: 50px;
+    text-align: center;
+}
+
+button{
+    background-color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-family: Poppins;
+
+    font-size: 30px;
+}
+
+.jump {
+    box-shadow: 0 8px 15px rgba(0,0,0,.1);
+    transition: all .3s ease 0s;
+}
+
+.jump:hover {
+    background-color: #FED447;
+    box-shadow: 0 15px 20px rgba(211, 182, 48, 0.29);
+    transform: translateY(-7px);
+}
+
+.plan{
+    color: #3B97F3;
+    margin: 30px;
+    font-family: Lato;
+}
+
+.details_order{
+   color: #D22749;
+    font-family: Poppins;
+    font-size: 20px;
+}
+
+.details_order:hover{
+    color: black;
+}
+
+@media (max-width:900px ) {
+    .details_order{
+        font-size: 10px;
+    }
+    .title{
+        font-size: 25px;
+        padding: 40px 10px 0px 10px;
+    }
+
+    .subtitle{
+        font-size: 18px;
+        padding-bottom: 0;
+    }
+    .return{
+        padding: 10px;
+    }
+
+    .return img{
+        width: 20px;
+    }
+
+    .return a{
+        font-size: 15px;
     }
 }

@@ -105,11 +105,14 @@ h2{
     }
 }
 
+/*MESSAGE CONFIRMATION*/
 
 .message{
     text-align: center;
     font-family: Poppins;
-    font-size: 25px;
-    color: #3B97F3;
-    padding-bottom: 50px;
+    width: 100%;
+    background-color: #3B97F3;;
+    font-size: 30px;
+    padding: 20px 10px;
+    color: white;
 }

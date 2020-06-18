@@ -18,7 +18,7 @@
 
 <main>
 
-    <h1 class="category_name"><?= $categorySelected['name'] ?></h1>
+    <h1 class="title"><?= $categorySelected['name'] ?></h1>
 
     <h3 class="subtitle"><?= $categorySelected['description'] ?></h3>
 

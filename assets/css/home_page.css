@@ -56,13 +56,12 @@
 }
 
 .about h3{
-    font-family: Oswald;
+    font-family: 'Oswald';
     text-align: center;
     font-size: 3vh;
 }
 .about p{
-    font-family: Lato;
-    /*text-align: center;*/
+    font-family: 'Lato';
     font-size: 2vh;
     padding: 10px;
 }
@@ -82,25 +81,6 @@
 .about button:hover{
     color: darkgrey;
     /*border-color: darkgrey;*/
-}
-
-@media only screen and (max-width: 900px){
-    .about{
-        margin: 50px 0 20px 0;
-    }
-    .card_questions{
-        flex-direction: column;
-    }
-    .card_questions div{
-        width: 80%;
-        margin-bottom: 30px;
-    }
-    .about p{
-        font-size: 1.5vh;
-    }
-    .about h3{
-        font-size: 2vh;
-    }
 }
 
 /*SECTION ROSE DU COMPTEUR*/
@@ -336,5 +316,32 @@
 @media (max-width: 900px){
     .prev, .next{
         font-size: 20px;
+    }
+}
+
+/*REPONSIVE*/
+
+@media only screen and (max-width: 900px){
+    .about{
+        margin: 50px 0 20px 0;
+    }
+    .card_questions{
+        flex-direction: column;
+    }
+    .card_questions div{
+        width: 80%;
+        margin-bottom: 30px;
+    }
+    .about p{
+        font-size: 1.5vh;
+    }
+    .about h3{
+        font-size: 2vh;
+    }
+
+    .about button{
+        font-size: 10px;
+        height: 50px;
+        width: 50px;
     }
 }

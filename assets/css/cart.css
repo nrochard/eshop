@@ -284,6 +284,18 @@ a{
         font-size: 12px;
         width: 10%;
     }
+    .empty_cart{
+        margin-top: 10px;
+    }
+    .empty_cart h3{
+        font-size: 20px;
+    }
+    .empty_cart a{
+        font-size: 20px;
+    }
+    main{
+        margin-bottom: 50px;
+    }
 }
 
 /*MESSAGE CONFIRMATION*/

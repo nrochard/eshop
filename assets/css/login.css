@@ -67,3 +67,35 @@ form{
     font-size: 25px;
     color: #3B97F3;
 }
+
+@media (max-width: 900px) {
+    .container h2{
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .container button{
+        font-size: 20px;
+        margin-bottom: 100px;
+    }
+    .container .connexion form input{
+        margin-bottom: 50px;
+        font-size: 18px;
+        border: 1px solid black;
+    }
+    .container p{
+        margin: 50px 0;
+    }
+}
+
+/*MESSAGE CONFIRMATION*/
+
+.message{
+    text-align: center;
+    font-family: Poppins;
+    width: 100%;
+    background-color: #D22749;
+    font-size: 30px;
+    padding: 20px 10px;
+    color: white;
+}

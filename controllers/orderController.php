@@ -3,6 +3,7 @@
 require_once 'models/User.php';
 require_once 'models/Order.php';
 require_once 'models/Category.php';
+require_once 'models/Product.php';
 
 $categories = getCategories();
 
@@ -39,8 +40,13 @@ if ($_GET['action'] == 'validate'){
 else if ($_GET['action'] == 'new') {
 //    var_dump($_SESSION['total']);
     $userInformations = getUser($_SESSION['user']['id']);
-    $newOrder = addOrder($userInformations, $_SESSION['total']);
-
+//    var_dump($_SESSION['plan']);
+    $newOrderId = addOrder($userInformations, $_SESSION['total']);
+    foreach ($_SESSION['cart'] as $product_id => $quantity){
+        $product = getProduct($product_id);
+        $order = fillOrder($product, $newOrderId, $_SESSION['cart'][$product_id]);
+    }
+    $detailsOrder = getDetailsOrder($newOrderId);
     include 'views/order.php';
 }
 
@@ -54,8 +60,10 @@ else if ($_GET['action'] == 'list') {
 
 else if ($_GET['action'] == 'view') {
 
-//    $order = createOrder();
-//    include 'views/order.php';
+//    var_dump($_GET['orderId']);
+    $detailsOrder = getDetailsOrder($_GET['orderId']);
+    var_dump($detailsOrder);
+    include 'views/orderDetailsUser.php';
 }
 
 

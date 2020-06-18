@@ -14,18 +14,19 @@
 
     <?php require 'partials/header.php'; ?>
 
-    <hr>
-</header>
-
-<main>
-
     <?php if(isset($_SESSION['messages'])): ?>
-        <div>
+        <div class="message">
             <?php foreach($_SESSION['messages'] as $message): ?>
-                <h4 class="message"><?= $message ?></h4><br>
+                <?= $message ?><br>
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
+    <?php if(!isset($_SESSION['messages'])): ?>
+        <hr>
+    <?php endif;?>
+</header>
+
+<main>
 
     <div class="container">
 

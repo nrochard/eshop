@@ -208,17 +208,3 @@ function getProductsCategory($categoryId){
     return $query->fetchAll();
 
 }
-
-function addProductToCart($id){
-    $db = dbConnect();
-    $query = $db->query('SELECT * FROM products WHERE id = ' . $id);
-    $productToCart = $query->fetch();
-
-//    $_SESSION['cart'] = [
-//        'name' => $productToCart['name'],
-//        'price' => $productToCart['price'],
-//        'description' => $productToCart['description'],
-//        'is_activated' => $productToCart['is_activated'],
-//        'image' => $productToCart['image'],
-//    ];
-}
