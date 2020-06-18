@@ -1,7 +1,9 @@
+
+/*GÉNÉRAL*/
+
 .container{
     padding: 50px 100px 80px 100px;
 }
-/*Titre de la page*/
 
 .title{
     text-align: center;
@@ -18,7 +20,7 @@
 }
 
 
-/*Bouton retour en arrière*/
+/*BOUTON RETOUR EN ARRIÈRE*/
 
 .return{
     padding: 30px;
@@ -71,21 +73,6 @@ td{
 
  }
 
-@media (max-width: 900px) {
-    .container_table{
-        margin: 50px 10px;
-    }
-
-    th{
-        font-size: 15px;
-    }
-
-    td{
-        font-family: Lato;
-        font-size: 12px;
-    }
-}
-
 p{
     text-align: center;
     font-family: Oswald;
@@ -115,17 +102,6 @@ a{
     font-size: 30px;
 }
 
-.jump {
-    box-shadow: 0 8px 15px rgba(0,0,0,.1);
-    transition: all .3s ease 0s;
-}
-
-.jump:hover {
-    background-color: #FED447;
-    box-shadow: 0 15px 20px rgba(211, 182, 48, 0.29);
-    transform: translateY(-7px);
-}
-
 .plan{
     color: #3B97F3;
     margin: 30px;
@@ -141,6 +117,22 @@ a{
 .details_order:hover{
     color: black;
 }
+
+/*EFFET HOVER BOUTON*/
+
+.jump {
+    box-shadow: 0 8px 15px rgba(0,0,0,.1);
+    transition: all .3s ease 0s;
+}
+
+.jump:hover {
+    background-color: #FED447;
+    box-shadow: 0 15px 20px rgba(211, 182, 48, 0.29);
+    transform: translateY(-7px);
+}
+
+
+/*RESPONSIVE*/
 
 @media (max-width:900px ) {
     .details_order{
@@ -165,5 +157,17 @@ a{
 
     .return a{
         font-size: 15px;
+    }
+    .container_table{
+        margin: 50px 10px;
+    }
+
+    th{
+        font-size: 15px;
+    }
+
+    td{
+        font-family: Lato;
+        font-size: 12px;
     }
 }

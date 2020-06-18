@@ -1,3 +1,5 @@
+/*GÉNÉRAL*/
+
 .title{
     text-align: center;
     font-family: Oswald;
@@ -24,6 +26,9 @@ container{
 main{
     margin-bottom: 100px;
 }
+
+/*FORMULAIRE */
+
 .container form{
     text-align: center;
 }

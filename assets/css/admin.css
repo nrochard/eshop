@@ -1,3 +1,5 @@
+/*MESSAGE DE CONFIRMATION*/
+
 .message{
     text-align: center;
     font-family: "Helvetica Neue";
@@ -6,6 +8,8 @@
     padding: 20px;
     background-color: #9933cc;
 }
+
+/*AJUSTEMENT TAILLE POLICE*/
 
 th, tr, label{
     font-size: 25px;

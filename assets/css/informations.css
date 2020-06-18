@@ -70,7 +70,8 @@
 }
 
 .form input{
-    padding: 20px 100px;
+    width: 40%;
+    padding: 10px;
     margin-bottom: 70px;
     text-align: center;
     font-family: Lato;
@@ -146,5 +147,11 @@ small{
 
     .return a{
         font-size: 15px;
+    }
+    .message{
+        font-size: 20px;
+    }
+    .form input{
+        width: 100%;
     }
 }

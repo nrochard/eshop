@@ -68,6 +68,20 @@ form{
     color: #3B97F3;
 }
 
+/*MESSAGE CONFIRMATION*/
+
+.message{
+    text-align: center;
+    font-family: Poppins;
+    width: 100%;
+    background-color: #D22749;
+    font-size: 30px;
+    padding: 20px 10px;
+    color: white;
+}
+
+/*RESPONSIVE*/
+
 @media (max-width: 900px) {
     .container h2{
         font-size: 25px;
@@ -86,16 +100,8 @@ form{
     .container p{
         margin: 50px 0;
     }
+    .message{
+        font-size: 20px;
+    }
 }
 
-/*MESSAGE CONFIRMATION*/
-
-.message{
-    text-align: center;
-    font-family: Poppins;
-    width: 100%;
-    background-color: #D22749;
-    font-size: 30px;
-    padding: 20px 10px;
-    color: white;
-}

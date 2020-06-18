@@ -1,3 +1,5 @@
+/*GÉNÉRAL*/
+
 main{
     padding: 0 100px 100px 100px;
 }
@@ -8,12 +10,16 @@ main{
     padding: 40px 40px 0px 40px;
 }
 
+/*FLEX DES DEUX DIV*/
+
 .cart{
     display: flex;
     margin: 100px 0;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+/*LISTE DÉTAILLÉ DU CONTENU DU PANIER*/
 
 .list_product{
     width: 60%;
@@ -57,6 +63,8 @@ img{
     width: 100px;
 }
 
+/*BOUTON SUPPRESSION D'UN ARTICLE DU PANIER'*/
+
 .delete{
     background-color: #d22749;
     outline: 0;
@@ -72,6 +80,8 @@ a{
     text-decoration: none;
     color: white;
 }
+
+/*TABLEAU RÉCAPITULATIF DU MONTANT TOTAL DU PANIER*/
 
 .recap_product{
     width: 30%;
@@ -90,6 +100,19 @@ a{
     font-size: 30px;
     text-align: center;
     font-weight: 300;
+}
+
+.recap_product div{
+    text-align: center;
+}
+.recap_product div img{
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+.total{
+    font-size: 40px;
+    font-weight: bold;
 }
 
 
@@ -126,18 +149,7 @@ a{
     font-size: 30px;
 }
 
-.recap_product div{
-    text-align: center;
-}
-.recap_product div img{
-    width: 50%;
-    margin-bottom: 50px;
-}
 
-.total{
-    font-size: 40px;
-    font-weight: bold;
-}
 
 /*EFFET BOUTON HOVER*/
 
@@ -201,6 +213,17 @@ a{
         text-align: center;
     }
 
+}
+
+/*MESSAGE CONFIRMATION*/
+
+.message{
+    text-align: center;
+    font-family: Poppins;
+    width: 100%;
+    background-color: #d4d4d4;
+    font-size: 30px;
+    padding: 20px 10px;
 }
 
 @media (max-width: 900px) {
@@ -296,15 +319,8 @@ a{
     main{
         margin-bottom: 50px;
     }
+    .message{
+        font-size: 20px;
+    }
 }
 
-/*MESSAGE CONFIRMATION*/
-
-.message{
-    text-align: center;
-    font-family: Poppins;
-    width: 100%;
-    background-color: #d4d4d4;
-    font-size: 30px;
-    padding: 20px 10px;
-}

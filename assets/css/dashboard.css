@@ -1,3 +1,5 @@
+/*GÉNÉRAL*/
+
 .title{
     text-align: center;
     font-family: Oswald;
@@ -16,6 +18,7 @@
     padding-bottom: 200px;
 }
 
+/*TABLEAU DE BORD */
 
 .menu{
     padding-right: 100px;
@@ -51,8 +54,6 @@ img{
     align-items: flex-end;
 }
 
-
-
 .link{
     margin-top: 100px;
     box-shadow: 8px 8px 12px #aaa;
@@ -80,6 +81,20 @@ h2{
 
 }
 
+/*MESSAGE CONFIRMATION*/
+
+.message{
+    text-align: center;
+    font-family: Poppins;
+    width: 100%;
+    background-color: #3B97F3;;
+    font-size: 30px;
+    padding: 20px 10px;
+    color: white;
+}
+
+/*RESPONSIVE*/
+
 @media (max-width: 900px){
     .image{
         display: none;
@@ -103,16 +118,8 @@ h2{
     .main_dashoboard{
         padding-bottom: 100px;
     }
+    .message{
+        font-size: 20px;
+    }
 }
 
-/*MESSAGE CONFIRMATION*/
-
-.message{
-    text-align: center;
-    font-family: Poppins;
-    width: 100%;
-    background-color: #3B97F3;;
-    font-size: 30px;
-    padding: 20px 10px;
-    color: white;
-}

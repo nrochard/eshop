@@ -1,3 +1,5 @@
+/*GÉNÉRAL*/
+
 main{
     padding: 0 100px 80px 150px;
 }
@@ -17,6 +19,8 @@ main{
     font-weight: 300;
     padding-bottom: 70px;
 }
+
+/*LES ABONNEMENTS*/
 
 .plans{
     display: flex;
@@ -130,6 +134,9 @@ main{
     }
     .plans button a{
         font-size: 23px;
+    }
+    .message{
+        font-size: 20px;
     }
 
 }

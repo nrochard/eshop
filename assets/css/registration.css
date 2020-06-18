@@ -1,3 +1,5 @@
+/*FORMULAIRE*/
+
 .container{
     display: flex;
     flex-direction: column;
@@ -72,6 +74,8 @@
 small{
     font-family: Lato;
 }
+
+/*MESSAGE DE CONFIRMATION*/
 
 .message{
     text-align: center;

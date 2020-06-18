@@ -1,3 +1,9 @@
+/*GÉNÉRAL*/
+
+main{
+    margin: 0 auto 150px auto;
+}
+
 .title{
     text-align: center;
     font-family: Oswald;
@@ -14,17 +20,9 @@
     padding-bottom: 70px;
 }
 
-main{
-    margin: 0 auto 150px auto;
-}
+/*AFFICHAGES DES PRODUITS*/
 
 section{
-    /*display: grid;*/
-    /*grid-template-columns: repeat(3, 1fr);*/
-    /*grid-template-rows: repeat(3, 1fr);*/
-    /*grid-column-gap: 100px;*/
-    /*grid-row-gap: 100px;*/
-
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -58,6 +56,9 @@ figure img{
     display:block;
     box-shadow: 8px 8px 12px #aaa;
 }
+
+/*RESPONSIVE*/
+
 @media (max-width: 900px){
     figure{
         width: 50%;
@@ -76,5 +77,8 @@ figure img{
     }
     figcaption{
         font-size: 25px;
+    }
+    .message{
+        font-size: 20px;
     }
 }

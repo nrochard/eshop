@@ -1,3 +1,5 @@
+/*GÉNÉRAL*/
+
 main{
     padding: 0 100px 80px 100px;
 }
@@ -18,6 +20,7 @@ main{
     padding-bottom: 70px;
 }
 
+/*DIV DES ARTICLES */
 
 .articles{
     display: flex;
@@ -58,6 +61,8 @@ main{
     padding: 0 30px;
 }
 
+/*RESPONSIVE*/
+
 @media (max-width: 900px){
     main{
         padding: 0 10px 80px 10px;
@@ -73,7 +78,7 @@ main{
         padding: 40px 10px 0px 10px;
     }
 
-    .subtitle{
+    .subtitle {
         font-size: 22px;
         padding-bottom: 20px;
     }
