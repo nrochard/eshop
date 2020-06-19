@@ -34,11 +34,9 @@
             <tbody>
             <?php foreach ($detailsOrder as $detailOrder) : ?>
                 <tr>
-                    <?php if ($detailOrder['name'] != NULL) : ?>
-                    <td><?= $detailOrder['name']?></td>
-                    <td><?= $detailOrder['price']?></td>
-                    <td><?= $detailOrder['quantity']?></td>
-                    <?php endif; ?>
+                    <td><?= htmlentities($detailOrder['name'])?></td>
+                    <td><?= htmlentities($detailOrder['price'])?></td>
+                    <td><?= htmlentities($detailOrder['quantity'])?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

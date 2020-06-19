@@ -39,11 +39,10 @@
             </tr>
             </thead>
             <tbody>
-            <?php $count = 1?>
             <?php foreach($questions as $question):?>
                 <tr>
-                    <th scope="row"><?= $count++ ?></th>
-                    <td><?= $question['question'] ?> </td>
+                    <th scope="row"><?= htmlentities($question['id']) ?></th>
+                    <td><?= htmlentities($question['question']) ?> </td>
                     <td>
                         <a class="btn btn-primary btn-lg" href="index.php?p=faqAdmin&action=edit&id=<?= $question['id'] ?>" role="button">Modifier</a>
                         <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#exampleModal<?= $question['id'] ?>">

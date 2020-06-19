@@ -40,9 +40,25 @@
                 <input type="text" id="description" name="description" class="form-control" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['description'] : '' ?><?= isset($category) ? $category['description'] : ''?>">
 
             </div>
+
+            <div class="form-group">
+                <label for="image">Image : </label>
+                <p> Image existante pour ce produit :
+                    <?php if (isset($_GET['id']))
+                        echo htmlentities($category['image']);
+                    else
+                        echo "aucune"
+                    ?>
+                </p>
+                <input type="file" class="form-control-file" id="image" name="image">
+                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
+            </div>
+
             <div class="text-center mt-5">
                 <button type="submit" class="btn btn-dark btn-lg">Enregistrer</button>
             </div>
+
+
 
         </form>
 

@@ -17,8 +17,6 @@
 
 <main>
 
-    <h2 class="p-3 text-center mt-5 mb-5">Liste des catégories</h2>
-
     <?php if(isset($_SESSION['messages'])): ?>
         <div class="message">
             <?php foreach($_SESSION['messages'] as $message): ?>
@@ -26,6 +24,8 @@
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
+
+    <h2 class="p-3 text-center mt-5 mb-5">Liste des catégories</h2>
 
     <div class="container-fluid">
 
@@ -38,11 +38,10 @@
             </tr>
             </thead>
             <tbody>
-            <?php $count = 1?>
             <?php foreach($categories as $category):?>
                 <tr>
-                    <th scope="row"><?= $count++ ?></th>
-                    <td><?= $category['name'] ?> </td>
+                    <th scope="row"><?=$category['id'] ?></th>
+                    <td><?= htmlentities($category['name']) ?> </td>
                     <td>
                         <a class="btn btn-primary btn-lg" href="index.php?p=categoryAdmin&action=edit&id=<?= $category['id'] ?>" role="button">Modifier</a>
 

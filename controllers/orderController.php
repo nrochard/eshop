@@ -36,11 +36,8 @@ if ($_GET['action'] == 'validate'){
     }
 }
 
-
 else if ($_GET['action'] == 'new') {
-//    var_dump($_SESSION['total']);
     $userInformations = getUser($_SESSION['user']['id']);
-//    var_dump($_SESSION['plan']);
     $newOrderId = addOrder($userInformations, $_SESSION['total']);
     foreach ($_SESSION['cart'] as $product_id => $quantity){
         $product = getProduct($product_id);
@@ -51,31 +48,17 @@ else if ($_GET['action'] == 'new') {
 }
 
 else if ($_GET['action'] == 'list') {
-//    var_dump($_SESSION['user']['id']);
     $orders = getOrdersOfUser($_SESSION['user']['id']);
-//    var_dump($orders);
     include 'views/orderUser.php';
 }
 
 
 else if ($_GET['action'] == 'view') {
-
-//    var_dump($_GET['orderId']);
     $detailsOrder = getDetailsOrder($_GET['orderId']);
-    var_dump($detailsOrder);
     include 'views/orderDetailsUser.php';
 }
 
-
-//verifier si l'utilosateur est connecte
-// if isset $_SESSISON['user']
-//sinon redigirier vers les formulaires
-//ici ajouter une commande
-
-// ici recuperer les produits et quantites vec $_SESSIONS['cart']
-//on creer la commande
-// on confirme le tout avec un petit messge de cofimration
-
-//action = list
-
-//ici visualiser la commande
+else{
+    header('Location:index.php');
+    exit;
+}

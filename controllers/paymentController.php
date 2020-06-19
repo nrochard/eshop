@@ -7,3 +7,8 @@ $categories = getCategories();
 if($_GET['action'] == 'form'){
     require('views/payment.php');
 }
+
+else{
+    header('Location:index.php');
+    exit;
+}

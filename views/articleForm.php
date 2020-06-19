@@ -64,7 +64,15 @@
 
             <div class="form-group">
                 <label for="image">Image : </label>
+                <p> Image existante pour cet article :
+                    <?php if (isset($_GET['id']))
+                        echo htmlentities($article['image']);
+                    else
+                        echo "aucune"
+                    ?>
+                </p>
                 <input type="file" class="form-control-file" id="image" name="image">
+                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
             </div>
 
             <div class="text-center mt-5">

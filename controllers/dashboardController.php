@@ -80,3 +80,8 @@ else if($_GET['action'] == 'edit'){
         require('views/informations.php');
     }
 }
+
+else{
+    header('Location:index.php');
+    exit;
+}

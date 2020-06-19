@@ -32,9 +32,8 @@ elseif($_GET['action'] == 'edit') {
         }
         else{
             $result = updateCategory($_GET['id'], $_POST);
-            $_SESSION['messages'][] = $result ? 'Artiste mis à jour' : 'Erreur lors de la mise à jour... :(';
+            $_SESSION['messages'][] = $result ? 'Catégorie mise à jour' : 'Erreur lors de la mise à jour.';
             header('Location:index.php?p=categoryAdmin&action=list');
-            // On peut decider de rediriger vers action=edit&id=.$_GET[$id]'
             exit;
         }
     }
@@ -79,4 +78,9 @@ elseif($_GET['action'] == 'add'){
         header('Location:index.php?p=categoryAdmin&action=list');
         exit;
     }
+}
+
+else{
+    header('Location:index.php');
+    exit;
 }

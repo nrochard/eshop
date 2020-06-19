@@ -55,3 +55,8 @@ if($_GET['action'] == 'add') {
 else if ($_GET['action'] == 'new'){
     include 'views/registration.php';
 }
+
+else{
+    header('Location:index.php');
+    exit;
+}

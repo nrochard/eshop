@@ -25,3 +25,7 @@ else if($_GET['action'] == 'list'){
     include 'views/plans.php';
 }
 
+else{
+    header('Location:index.php');
+    exit;
+}

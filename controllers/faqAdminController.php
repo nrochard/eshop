@@ -23,9 +23,8 @@ elseif($_GET['action'] == 'edit') {
         }
         else{
             $result = updateQuestion($_GET['id'], $_POST);
-            $_SESSION['messages'][] = $result ? 'Artiste mis à jour' : 'Erreur lors de la mise à jour... :(';
+            $_SESSION['messages'][] = $result ? 'Question mise à jour' : 'Erreur lors de la mise à jour...';
             header('Location:index.php?p=faqAdmin&action=list');
-            // On peut decider de rediriger vers action=edit&id=.$_GET[$id]'
             exit;
         }
     }
@@ -86,4 +85,9 @@ elseif($_GET['action'] == 'add'){
         header('Location:index.php?p=faqAdmin&action=list');
         exit;
     }
+}
+
+else{
+    header('Location:index.php');
+    exit;
 }

@@ -22,9 +22,9 @@
     <h3 class="subtitle">Tu trouveras toutes les réponses à tes questions ici !</h3>
 
     <?php foreach($questions as $question):?>
-    <button class="accordion"><?= $question['question']?></button>
+    <button class="accordion"><?= htmlentities($question['question'])?></button>
     <div class="panel">
-        <p><?= $question['answer']?></p>
+        <p><?= htmlentities($question['answer'])?></p>
     </div>
 
     <?php endforeach; ?>

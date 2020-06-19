@@ -50,7 +50,6 @@ function addProduct($informations)
 
             foreach ($informations['category_id'] as $key => $categoryId) {
 
-                //génération dynamique de $queryString
                 $queryString .= '(?, ?)';
                 if ($key != array_key_last($informations['category_id'])) {
                     $queryString .= ',';
@@ -58,8 +57,6 @@ function addProduct($informations)
                     $queryString .= ';';
                 }
 
-                // génération dynamique de $queryValues
-                // à chaque boucle, on ajoute au tableau les valeurs correspondantes à
                 $queryValues[] = $productId;
                 $queryValues[] = $categoryId;
             }
@@ -102,7 +99,6 @@ function updateProduct($id, $informations){
         ]
     );
 
-    // supprimer les anciennes liaisons
     $query = $db->prepare('DELETE FROM product_categories WHERE product_id = ?');
     $result = $query->execute([
         $id,
@@ -164,7 +160,6 @@ function deleteProduct($id)
         unlink('../assets/images/products/'.$product['image']);
     }
 
-
     $query = $db->prepare('DELETE FROM products WHERE id = ?');
     $result = $query->execute([$id]);
 
@@ -202,9 +197,6 @@ function getProductsCategory($categoryId){
     $query->execute([
         $categoryId,
     ]);
-//    var_dump($categoryId);
-//    var_dump($query->fetchAll());
-//    die();
     return $query->fetchAll();
 
 }

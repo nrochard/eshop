@@ -52,28 +52,40 @@
                         ?><option value="<?= $category['id']; ?>" <?php if(isset($product) && $selected): ?>selected="selected"<?php endif; ?>><?= $category['name']; ?></option>
                     <?php endforeach; ?>
                 </select>
+                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
             </div>
 
             <div class="form-group">
                 <label for="description">Description :</label>
-                <input type="text" id="description" name="description" class="form-control" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['description'] : '' ?><?= isset($product) ? $product['description'] : ''?>">
+                <textarea id="description" name="description" class="form-control"><?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['description'] : '' ?><?= isset($product) ? $product['description'] : ''?></textarea>
+                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
             </div>
 
             <div class="form-group">
                 <label for="quantity">Quantité disponible :</label>
-                <input type="text" id="quantity" name="quantity" class="form-control" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['quantity'] : '' ?><?= isset($product) ? $product['quantity'] : ''?>">
+                <input type="number" id="quantity" name="quantity" class="form-control" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['quantity'] : '' ?><?= isset($product) ? $product['quantity'] : ''?>">
+                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
             </div>
 
 
             <div class="form-group">
                 <label for="price">Prix :</label>
-                <input type="text" id="price" name="price" class="form-control" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['price'] : '' ?><?= isset($product) ? $product['price'] : ''?>">
+                <input type="number" id="price" name="price" class="form-control" value="<?= isset($_SESSION['old_inputs']) ? $_SESSION['old_inputs']['price'] : '' ?><?= isset($product) ? $product['price'] : ''?>">
+                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
             </div>
 
 
             <div class="form-group">
                 <label for="image">Image : </label>
+                <p> Image existante pour ce produit :
+                    <?php if (isset($_GET['id']))
+                        echo htmlentities($product['image']);
+                    else
+                        echo "aucune"
+                    ?>
+                </p>
                 <input type="file" class="form-control-file" id="image" name="image">
+                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
             </div>
 
             <div class="form-group">
@@ -82,6 +94,7 @@
                     <option value="1">Oui</option>
                     <option value="0">Non</option>
                 </select>
+                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
             </div>
 
             <div class="text-center mt-5">

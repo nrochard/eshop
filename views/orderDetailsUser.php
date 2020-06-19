@@ -38,10 +38,10 @@
             <tbody>
             <?php foreach($detailsOrder as $detailOrder):?>
                 <tr>
-                    <td><?= $detailOrder['name']?></td>
-                    <td><?= $detailOrder['price']?>€</td>
-                    <td><?= $detailOrder['quantity']?></td>
-                    <td><?= $detailOrder['price'] * $detailOrder['quantity']?>€</td>
+                    <td><?= htmlentities($detailOrder['name'])?></td>
+                    <td><?= htmlentities($detailOrder['price'])?>€</td>
+                    <td><?= htmlentities($detailOrder['quantity'])?></td>
+                    <td><?= htmlentities($detailOrder['price']) * htmlentities($detailOrder['quantity'])?>€</td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

@@ -63,7 +63,8 @@
             <div class="form-group">
                 <label for="password">Mot de passe :</label>
                 <input type="text" class="form-control" id="password" name="password">
-                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
+                <small id="name" class="form-text text-muted">Champs obligatoire à la création d'un utilisateur.</small>
+                <small id="name" class="form-text text-muted">Si vous souhaitez réinitialiser le mot de passe d'un utilisateur, saisissez en un nouveau. Sinon, laissez le champ vide</small>
             </div>
 
             <div class="form-group">
@@ -72,7 +73,9 @@
                     <option value="0">Non</option>
                     <option value="1">Oui</option>
 
+
                 </select>
+                <small id="name" class="form-text text-muted">Champs obligatoire.</small>
             </div>
 
             <div class="text-center mt-5">

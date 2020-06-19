@@ -120,3 +120,7 @@ else if($_GET['action'] == 'delete'){
     exit;
 }
 
+else{
+    header('Location:index.php');
+    exit;
+}

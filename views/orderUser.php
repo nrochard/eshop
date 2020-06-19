@@ -38,9 +38,9 @@
             <tbody>
             <?php foreach($orders as $order):?>
                 <tr>
-                    <td><?= $order['id']?></td>
-                    <td><?= $order['date']?></td>
-                    <td><?= $order['price']?>€</td>
+                    <td><?= htmlentities($order['id'])?></td>
+                    <td><?= htmlentities($order['date'])?></td>
+                    <td><?= htmlentities($order['price'])?>€</td>
                     <td><a href="index.php?p=order&action=view&orderId=<?= $order['id']?>" class="details_order">Voir le détail</a></td>
                 </tr>
             <?php endforeach; ?>

@@ -35,20 +35,19 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nom</th>
+                <th scope="col">Titre</th>
                 <th scope="col">Résumé</th>
                 <th scope="col">Date</th>
                 <th scope="col">Action</th>
             </tr>
             </thead>
             <tbody>
-            <?php $count = 1?>
             <?php foreach($articles as $article):?>
                 <tr>
-                    <th scope="row"><?= $count++ ?></th>
-                    <td><?= $article['title'] ?> </td>
-                    <td><?= $article['summary'] ?> </td>
-                    <td><?= $article['created_at'] ?> </td>
+                    <th scope="row"><?= htmlentities($article['id']) ?></th>
+                    <td><?= htmlentities($article['title']) ?> </td>
+                    <td><?= htmlentities($article['summary']) ?> </td>
+                    <td><?= htmlentities($article['created_at']) ?> </td>
                     <td>
                         <a class="btn btn-primary btn-lg" href="index.php?p=blogAdmin&action=edit&id=<?= $article['id'] ?>" role="button">Modifier</a>
 

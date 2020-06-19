@@ -40,13 +40,12 @@
             </tr>
             </thead>
             <tbody>
-            <?php $count = 1?>
             <?php foreach($plans as $plan):?>
                 <tr>
-                    <th scope="row"><?= $count++ ?></th>
-                    <td><?= $plan['name'] ?>
-                    <td><?= $plan['tag'] ?> </td>
-                    <td><?= $plan['price'] ?> </td>
+                    <th scope="row"><?= htmlentities($plan['id']) ?></th>
+                    <td><?= htmlentities($plan['name']) ?>
+                    <td><?= htmlentities($plan['tag']) ?> </td>
+                    <td><?= htmlentities($plan['price']) ?> </td>
                     <td>
                         <a class="btn btn-primary btn-lg" href="index.php?p=planAdmin&action=edit&id=<?= $plan['id'] ?>" role="button">Modifier</a>
                         <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#exampleModal<?= $plan['id'] ?>">

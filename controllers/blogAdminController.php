@@ -44,7 +44,7 @@ elseif($_GET['action'] == 'edit') {
         }
         else{
             $result = updateArticle($_GET['id'], $_POST);
-            $_SESSION['messages'][] = $result ? 'Article mis à jour' : 'Erreur lors de la mise à jour... :(';
+            $_SESSION['messages'][] = $result ? 'Article mis à jour' : 'Erreur lors de la mise à jour.';
             header('Location:index.php?p=blogAdmin&action=list');
             exit;
         }
@@ -74,7 +74,7 @@ elseif($_GET['action'] == 'new'){
 
 elseif($_GET['action'] == 'add'){
 
-    if(empty($_POST['title']) || empty($_POST['created_at']) || empty($_POST['summary']) || empty($_POST['content']) ){
+    if(empty($_POST['title']) || empty($_POST['created_at']) || empty($_POST['summary']) || empty($_POST['content']) || empty($_FILES['image']) ){
         if(empty($_POST['title'])){
             $_SESSION['messages'][] = 'Le champ titre est obligatoire !';
         }
@@ -87,9 +87,9 @@ elseif($_GET['action'] == 'add'){
         else if(empty($_POST['content'])){
             $_SESSION['messages'][] = 'Le champ contenu est obligatoire !';
         }
-//        else if(empty($_POST['image'])){
-//            $_SESSION['messages'][] = 'Le champ image est obligatoire !';
-//        }
+        else if(empty($_FILES['image'])){
+            $_SESSION['messages'][] = 'Le champ image est obligatoire !';
+        }
         $_SESSION['old_inputs'] = $_POST;
         header('Location:index.php?p=blogAdmin&action=new');
         exit;
@@ -102,4 +102,9 @@ elseif($_GET['action'] == 'add'){
         header('Location:index.php?p=blogAdmin&action=list');
         exit;
     }
+}
+
+else{
+    header('Location:index.php');
+    exit;
 }

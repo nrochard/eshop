@@ -28,7 +28,7 @@
 
 <main>
 
-    <h1 class="title"><?= $product['name'] ?> </h1>
+    <h1 class="title"><?= htmlentities($product['name']) ?> </h1>
 
     <div class="info_product">
         <div>
@@ -36,8 +36,8 @@
         </div>
         <div>
             <h3 class="description">Description : </h3>
-            <p><?=$product['description']?></p>
-            <p><?=$product['price']?>€ </p>
+            <p><?= htmlentities($product['description'])?></p>
+            <p><?= htmlentities($product['price'])?>€ </p>
             <form action="index.php?p=product&action=addProduct&product_id=<?=$product['id']?>" method="post">
                 <label for="quantity"></label>
                 <input type="number" name="quantity" id="quantity" placeholder="Quantité">

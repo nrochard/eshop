@@ -11,15 +11,9 @@
 <body>
 
 <header>
-
     <?php require 'partials/header_admin.php'; ?>
 </header>
 
-<main>
-
-</main>
-
 <?php require 'partials/script_bootstrap.php'; ?>
-
 </body>
 

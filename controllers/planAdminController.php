@@ -116,3 +116,8 @@ elseif($_GET['action'] == 'edit') {
         require('views/plansForm.php');
     }
 }
+
+else{
+    header('Location:index.php');
+    exit;
+}

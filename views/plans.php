@@ -36,13 +36,13 @@
     <div class="plans">
         <?php foreach($plans as $plan):?>
         <div>
-            <h2><?= $plan['name']?></h2>
+            <h2><?= htmlentities($plan['name'])?></h2>
             <hr>
-            <h4><?= $plan['tag']?></h4>
-            <h3><?= $plan['price']?> € / <?= $plan['duration']?></h3>
-            <p><?= $plan['feature1']?></p>
-            <p><?= $plan['feature2']?></p>
-            <p><?= $plan['feature3']?></p>
+            <h4><?= htmlentities($plan['tag'])?></h4>
+            <h3><?= htmlentities($plan['price'])?> € / <?= htmlentities($plan['duration'])?></h3>
+            <p><?= htmlentities($plan['feature1'])?></p>
+            <p><?= htmlentities($plan['feature2'])?></p>
+            <p><?= htmlentities($plan['feature3'])?></p>
             </p>
             <br>
             <button><a href="index.php?p=plans&action=addProduct&id=<?= $plan['id'] ?>">Commencer</a></button>

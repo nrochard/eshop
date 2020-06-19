@@ -31,7 +31,7 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th scope="col">Id</th>
+                <th scope="col">#</th>
                 <th scope="col">Prénom et nom</th>
                 <th scope="col">Prix total</th>
                 <th scope="col">Action</th>
@@ -40,9 +40,9 @@
             <tbody>
             <?php foreach($orders as $order):?>
                 <tr>
-                    <th><?= $order['id'] ?></th>
-                    <td><?= $order['firstname'] ?> <?= $order['lastname'] ?></td>
-                    <td><?= $order['price'] ?> €</td>
+                    <th><?= htmlentities($order['id']) ?></th>
+                    <td><?= htmlentities($order['firstname']) ?> <?= htmlentities($order['lastname']) ?></td>
+                    <td><?= htmlentities($order['price']) ?> €</td>
                     <td>
                         <a class="btn btn-primary btn-lg" href="index.php?p=orderAdmin&action=view&id=<?= $order['id'] ?>" role="button">Voir</a>
                         </div>

@@ -10,7 +10,7 @@ if($_GET['action'] == 'list'){
 else if($_GET['action'] == 'delete'){
     $result = deleteUser($_GET['id']);
     if($result){
-        $_SESSION['messages'][] = 'Utilisateur supprimée !';
+        $_SESSION['messages'][] = 'Utilisateur supprimé !';
     }
     else{
         $_SESSION['messages'][] = 'Erreur lors de la suppression. ';
@@ -48,7 +48,7 @@ elseif($_GET['action'] == 'edit') {
         }
         else{
             $result = updateUser($_GET['id'], $_POST);
-            $_SESSION['messages'][] = $result ? 'Utilisateur mis à jour' : 'Erreur lors de la mise à jour... :(';
+            $_SESSION['messages'][] = $result ? 'Utilisateur mis à jour' : 'Erreur lors de la mise à jour.';
             header('Location:index.php?p=userAdmin&action=list');
             exit;
         }
@@ -100,9 +100,14 @@ elseif($_GET['action'] == 'add'){
     else{
         $resultAdd = addUser($_POST);
 
-        $_SESSION['messages'][] = $resultAdd ? 'Utilisateur enregistrée !' : "Erreur lors de l'enregistrement.";
+        $_SESSION['messages'][] = $resultAdd ? 'Utilisateur enregistré !' : "Erreur lors de l'enregistrement.";
 
         header('Location:index.php?p=userAdmin&action=list');
         exit;
     }
+}
+
+else{
+    header('Location:index.php');
+    exit;
 }

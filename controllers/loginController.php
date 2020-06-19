@@ -49,3 +49,8 @@ if($_GET['action'] == 'connect') {
 else if($_GET['action'] == 'formLogin'){
     include 'views/login.php';
 }
+
+else{
+    header('Location:index.php');
+    exit;
+}
