@@ -58,8 +58,6 @@ function getDetailsOrder($orderId){
     $query = $db->query('SELECT * FROM order_details WHERE order_id = ' . $orderId);
     $detailsOrder = $query->fetchAll();
 
-//    var_dump($detailsOrder);
-
     return $detailsOrder;
 }
 

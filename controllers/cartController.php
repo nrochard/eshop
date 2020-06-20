@@ -26,7 +26,6 @@ else if($_GET['action'] == 'deletePlan'){
 }
 
 else if($_GET['action'] == 'deleteProduct'){
-    var_dump($_SESSION['cart']);
     unset($_SESSION['cart'][$_GET['id']]);
     $selectedPlan = [];
     $_SESSION['messages'][] = 'Votre produit à bien été supprimé !';

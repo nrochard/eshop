@@ -19,6 +19,7 @@ if($_GET['action'] == 'addProduct'){
     $product = getProduct($_GET['product_id']);
     if (empty($_POST['quantity'])){
         $_SESSION['messages'][] = 'Le champ quantité est obligatoire !';
+        include 'views/product.php';
     }
     else{
         if ($_POST['quantity'] >= 0 && $_POST['quantity'] <= 1000000){

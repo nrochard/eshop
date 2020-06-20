@@ -4,7 +4,6 @@ require_once 'models/Category.php';
 require_once 'models/Plan.php';
 
 if($_GET['action'] == 'addProduct'){
-    var_dump($_SESSION['plan']);
     if (empty($_SESSION['plan'])){
         $_SESSION['plan'] = $_GET['id'];
         $_SESSION['messages'][] = 'L\'abonnement à été ajouté à votre panier !';

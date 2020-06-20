@@ -16,7 +16,6 @@ function addUser($informations)
 
     $db = dbConnect();
 
-    //verifier si l'email n'est pas déjà utilisé
     $query = $db->prepare('SELECT email FROM users WHERE email = ?');
     $query->execute([
         $informations['email']
