@@ -70,7 +70,7 @@
             <p>Total :<span class="total"> <?= $total ?> €</span></p>
             <?php $_SESSION['total'] = $total ?>
             <button class="jump2"><a>Continuer mes achats</a></button> <br>
-            <button class="jump3"><a href="index.php?p=<?= isset($_SESSION['user']['firstname']) ? 'payment&action=form' : 'login' ?>">Payer mon panier</a></button>
+            <button class="jump3"><a href="index.php?p=<?= isset($_SESSION['user']['firstname']) ? 'payment&action=form' : 'login&action=formLogin' ?>">Payer mon panier</a></button>
             <div>
                 <img src="assets/images/card.jpg">
             </div>

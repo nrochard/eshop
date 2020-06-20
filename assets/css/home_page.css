@@ -26,16 +26,6 @@
     font-size: 100px;
 }
 
-@media (max-width: 900px){
-    .image_header{
-        height: 30vh;
-    }
-    .image_header h2, .image_header a{
-        font-size: 20px;
-        padding: 0;
-    }
-}
-
 /*LES 3 QUESTIONS */
 
 .about{
@@ -94,11 +84,6 @@
     background-color: #d22749;
 }
 
-@media (max-width: 900px){
-    .counter{
-        margin-top: 0;
-    }
-}
 .counter h2{
     color: white;
     padding-top: 3vh;
@@ -140,21 +125,6 @@
     font-family: Lato;
     font-weight: 400;
     padding-bottom: 30px;
-}
-
-@media (max-width: 900px){
-    .counter{
-        padding: 10px;
-    }
-    .number_counter h4{
-        font-size: 20px;
-    }
-    .number_counter img {
-        width: 35px;
-    }
-    .number_counter p{
-        font-size: 12px;
-    }
 }
 
 /*SECTION DES CATEGORIES*/
@@ -208,18 +178,6 @@
     font-size: 25px;
 }
 
-@media (max-width: 900px){
-    .categories img{
-        width: 13vh;
-    }
-    .categories p{
-        font-size: 15px;
-    }
-    .categories h4{
-        font-size: 13px;
-    }
-}
-
 /*CAROUSSEL DES OPINIONS */
 
 .opinion h2{
@@ -270,12 +228,6 @@
     margin-bottom: 3vh;
 }
 
-@media (max-width: 900px){
-    .opinion img{
-        width: 40%;
-    }
-}
-
 .opinion q{
     font-family: Lato;
     font-size: 2vh;
@@ -292,11 +244,33 @@
 
 
 @media only screen and (max-width: 900px){
+    .image_header{
+        height: 30vh;
+    }
+    .image_header h2, .image_header a{
+        font-size: 20px;
+        padding: 0;
+    }
+    .opinion img{
+        width: 40%;
+    }
+    .categories img{
+        width: 11vh;
+    }
+    .categories p{
+        font-size: 15px;
+    }
+    .categories h4{
+        font-size: 13px;
+    }
     .prev, .next{
         font-size: 20px;
     }
     .about{
         margin: 50px 0 20px 0;
+    }
+    .counter{
+        margin-top: 0;
     }
     .card_questions{
         flex-direction: column;
@@ -307,6 +281,7 @@
     }
     .about p{
         font-size: 1.5vh;
+        padding: 0;
     }
     .about h3{
         font-size: 2vh;
@@ -316,5 +291,18 @@
         font-size: 10px;
         height: 50px;
         width: 50px;
+        margin: 0 auto;
+    }
+    .counter{
+        padding: 10px;
+    }
+    .number_counter h4{
+        font-size: 20px;
+    }
+    .number_counter img {
+        width: 35px;
+    }
+    .number_counter p{
+        font-size: 12px;
     }
 }

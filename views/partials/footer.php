@@ -16,8 +16,8 @@
 <div class="footer_middle">
     <div class="contact">
         <p>Contactez nous</p>
-        <img src="assets/flavicon/call.png">
-        <img src="assets/flavicon/mail.png">
+        <a href="index.php?p=contact&action=form"><img src="assets/flavicon/call.png"></a>
+        <a href="index.php?p=contact&action=form"><img src="assets/flavicon/mail.png"></a>
         <p>
             Icône est à votre écoute<br>
             par mail ou par appel. <br>

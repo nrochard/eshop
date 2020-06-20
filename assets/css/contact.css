@@ -1,0 +1,139 @@
+/*Titre de la page*/
+
+.title{
+    text-align: center;
+    font-family: Oswald;
+    font-size: 40px;
+    padding: 40px 40px 10px 40px;
+}
+
+.subtitle{
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 300;
+    text-align: center;
+}
+
+/*Formulaire d'édition*/
+
+.form{
+    margin: 100px 0;
+    width: 100%;
+}
+
+
+.form form{
+    text-align: center;
+}
+
+
+.form h2{
+    font-family: Oswald;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.form h4{
+    font-family: Lato;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 100px;
+    font-weight: 200;
+}
+
+.form textarea{
+    height: 200px;
+}
+
+.form input, textarea{
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-family: Lato;
+    background-color: white;
+    font-size: 25px;
+    border: black 1px solid;
+    font-weight: 400;
+}
+
+.form label{
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.form button{
+    display: block;
+    margin: 0 auto;
+    font-family: Lato;
+    font-size: 30px;
+    padding: 20px 40px;
+    color: white;
+    border: none;
+    background-color: black;
+}
+
+.form button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.form a:visited{
+    color: black;
+}
+.form a:hover{
+    color: darkgrey;
+}
+
+small{
+    font-family: Lato;
+}
+
+/*MESSAGE CONFIRMATION*/
+
+.message{
+    text-align: center;
+    font-family: Poppins;
+    width: 100%;
+    background-color: #3B97F3;
+    font-size: 30px;
+    padding: 20px 10px;
+    color: white;
+}
+
+/*RESPONSIVE*/
+
+@media (max-width: 900px) {
+    .title{
+        font-size: 25px;
+        padding: 40px 10px 0px 10px;
+    }
+
+    .subtitle{
+        font-size: 18px;
+        padding-bottom: 0;
+    }
+
+    .return{
+        padding: 10px;
+    }
+
+    .return img{
+        width: 20px;
+    }
+
+    .return a{
+        font-size: 15px;
+    }
+    .message{
+        font-size: 20px;
+    }
+    .form input, textarea{
+        width: 100%;
+    }
+}

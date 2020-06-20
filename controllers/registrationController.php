@@ -40,6 +40,7 @@ if($_GET['action'] == 'add') {
 
             if (!$resultAddUser){
                 $_SESSION['messages'][] = 'Email déjà utilisé';
+                $_SESSION['old_inputs'] = $_POST;
                 header('Location:index.php?p=registration&action=new');
                 exit;
             }

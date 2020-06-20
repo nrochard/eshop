@@ -80,6 +80,9 @@ if(isset($_GET['p'])):
         case 'cart' :
             require 'controllers/cartController.php';
             break;
+        case 'contact' :
+            require 'controllers/contactController.php';
+            break;
         default :
             require 'controllers/indexController.php';
     endswitch;

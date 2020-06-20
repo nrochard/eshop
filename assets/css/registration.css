@@ -36,14 +36,14 @@
     background-color: white;
     font-size: 25px;
     border: black 1px solid;
-    font-weight: 200;
+    font-weight: 400;
     /*box-shadow: 8px 8px 12px #aaa;*/
 }
 
 .container label{
     font-family: Poppins;
     font-size: 25px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 

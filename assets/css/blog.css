@@ -82,4 +82,11 @@ main{
         font-size: 22px;
         padding-bottom: 20px;
     }
+    .articles h2{
+        font-size: 25px;
+        padding: 10px;
+    }
+    .articles div p:nth-child(3){
+        font-size: 18px;
+    }
 }
