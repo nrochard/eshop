@@ -99,3 +99,11 @@ function addCategory($informations)
 
     return $result;
 }
+
+function checkCategory($id){
+    $db = dbConnect();
+    $query = $db->query('SELECT * FROM categories WHERE id = ' . $id);
+    $selectedCategory = $query->fetch();
+
+    return $selectedCategory;
+}

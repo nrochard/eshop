@@ -37,6 +37,12 @@
                 <th scope="col">Total</th>
             </tr>
             </thead>
+
+            <p>Nom : <?= htmlentities($infoOrder['lastname'])?></p>
+            <p>Prénom : <?= htmlentities($infoOrder['firstname'])?></p>
+            <p>Adresse de facturation : <?= htmlentities($infoOrder['billing_adress'])?> à <?= htmlentities($infoOrder['billing_city'])?></p>
+            <strong><p>Montant total de la commande : <?= htmlentities($infoOrder['price'])?>€</p></strong>
+
             <tbody>
             <?php foreach($DetailsOrder as $DetailOrder):?>
             <tr>

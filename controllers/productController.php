@@ -4,6 +4,15 @@ require_once 'models/Category.php';
 
 require_once 'models/Product.php';
 
+if(isset($_GET['id']) || !ctype_digit($_GET['id'])){
+    $getProduct = getProduct($_GET['id']);
+    if (!$getProduct){
+        header('Location:index.php');
+        exit;
+    }
+}
+
+
 $categories = getCategories();
 
 

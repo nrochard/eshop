@@ -24,13 +24,17 @@
 
     <h1 class="title">DÉTAILS DE LA COMMANDE <?= $_GET['orderId'] ?> </h1>
     <h3 class="subtitle">Retrouver ici les produits achetés lors de cette commande.</h3>
+    <p>Nom : <?= htmlentities($infoOrder['lastname'])?></p>
+    <p>Prénom : <?= htmlentities($infoOrder['firstname'])?></p>
+    <p>Adresse de facturation : <?= htmlentities($infoOrder['billing_adress'])?><br><?= htmlentities($infoOrder['billing_city'])?></p>
+    <strong><p>Montant total de la commande : <?= htmlentities($infoOrder['price'])?>€</p></strong>
 
     <div class="container_table">
         <table class="table table-striped">
             <thead>
             <tr>
                 <th>Nom du produit</th>
-                <th>Prix</th>
+                <th>Prix à l'unité</th>
                 <th>Quantité</th>
                 <th>Prix total</th>
             </tr>

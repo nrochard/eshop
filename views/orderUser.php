@@ -31,7 +31,7 @@
             <tr>
                 <th>Numéro de commande</th>
                 <th>Date</th>
-                <th>Prix total</th>
+                <th>Montant total</th>
                 <th></th>
             </tr>
             </thead>

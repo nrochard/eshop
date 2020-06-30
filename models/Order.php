@@ -39,6 +39,14 @@ function getOrdersOfUser($id){
     return $selectedOrders;
 }
 
+function getInfoOrder($id){
+    $db = dbConnect();
+    $query = $db->query('SELECT * FROM orders WHERE id = ' . $id);
+    $selectedOrder = $query->fetch();
+    return $selectedOrder;
+}
+
+
 function fillOrder($product, $orderId, $quantityProduct){
     $db = dbConnect();
 

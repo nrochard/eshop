@@ -55,22 +55,20 @@ function connectUser($informations)
 function updateUser($id, $informations){
     $db = dbConnect();
 
-    $query = $db->prepare('UPDATE users SET firstname = ?, lastname = ?, email = ?, city = ?, adress = ?, password = ? WHERE id = ?');
-
-    $result = $query->execute(
-        [
-            $informations['firstname'],
-            $informations['lastname'],
-            $informations['email'],
-            $informations['city'],
-            $informations['adress'],
-            hash('md5', $informations['password']),
-            $id,
-        ]
-    );
-
-    return($result);
-
+    $queryString = 'UPDATE users SET firstname = :firstname, lastname = :lastname, city = :city, adress = :adress,' . (!empty($informations['password'])? 'password = :password,': '') . 'email = :email WHERE id = :id';
+    $queryArray = [
+        'firstname' => $informations['firstname'],
+        'lastname' => $informations['lastname'],
+        'adress' => $informations['adress'],
+        'city' => $informations['city'],
+        'email' => $informations['email'],
+        'id' => $id
+    ];
+    if(!empty($informations['password'])){
+        $queryArray['password'] = hash('md5', $informations['password']);
+    }
+    $query = $db->prepare($queryString);
+    return $query->execute($queryArray);
 }
 
 function getUser($id){

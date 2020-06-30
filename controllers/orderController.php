@@ -55,6 +55,7 @@ else if ($_GET['action'] == 'list') {
 
 else if ($_GET['action'] == 'view') {
     $detailsOrder = getDetailsOrder($_GET['orderId']);
+    $infoOrder = getInfoOrder($_GET['orderId']);
     include 'views/orderDetailsUser.php';
 }
 

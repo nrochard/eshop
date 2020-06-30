@@ -33,7 +33,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Prénom et nom</th>
-                <th scope="col">Prix total</th>
+                <th scope="col">Montant total</th>
                 <th scope="col">Action</th>
             </tr>
             </thead>
